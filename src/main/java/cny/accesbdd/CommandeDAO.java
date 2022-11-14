@@ -54,6 +54,28 @@ public class CommandeDAO {
 	}
 	
 	
+	public String recupererDateCommande(int idCommande) {
+		String date = null;
+		
+		requete = "SELECT `c_date` FROM `commande` WHERE `c_id`=?";
+		try {
+			pst = this.conn.prepareStatement(requete);
+			pst.setInt(1,idCommande);
+			resultat = pst.executeQuery();
+			
+			if (resultat.next()) {
+				date = resultat.getString("c_date");
+				
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return date;
+	}
+	
+	
 	public ArrayList<Commande> recupererCommandes(int idUtilisateur) {
 		ArrayList<Commande> commandes = new ArrayList<Commande>();
 		
@@ -86,13 +108,12 @@ public class CommandeDAO {
 		try {
 			pst = this.conn.prepareStatement(requete);
 			pst.setInt(1, id);
-			resultat = pst.executeQuery();
-			
-			if (resultat.next()) {
-				prod.setNom(resultat.getString("p_nom"));
-				prod.setCategorie(resultat.getString("p_categorie"));
-				prod.setImage(resultat.getString("p_image"));
-				prod.setPrix(resultat.getDouble("p_prix"));
+			ResultSet res = pst.executeQuery();
+			if (res.next()) {
+				prod.setNom(res.getString("p_nom"));
+				prod.setCategorie(res.getString("p_categorie"));
+				prod.setImage(res.getString("p_image"));
+				prod.setPrix(res.getDouble("p_prix"));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -108,7 +129,6 @@ public class CommandeDAO {
 			pst = this.conn.prepareStatement(requete);
 			pst.setInt(1, idCommande);
 			resultat = pst.executeQuery();
-			int i=1;
 			while (resultat.next()) {
 				Panier p = new Panier();
 				p.setQuantite(resultat.getInt("ap_quantite"));
@@ -119,8 +139,6 @@ public class CommandeDAO {
 				p.setImage(produit.getImage());
 				p.setPrix(produit.getPrix());
 				listePanier.add(p);
-				System.out.println(i++);
-				System.out.println(resultat.next());
 			}
 			
 		} catch (Exception e) {

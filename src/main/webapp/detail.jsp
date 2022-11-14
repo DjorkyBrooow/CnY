@@ -11,6 +11,8 @@
 	UtilisateurDAO uDAO = new UtilisateurDAO(ConnexionBDD.getConn());
 
 	ArrayList<Panier> panier = null;
+	double total = 0;
+	String date = null;
 	if (auth == null){
 		response.sendRedirect("login.jsp");
 	} else {
@@ -19,7 +21,7 @@
 		int idCommande = Integer.parseInt(request.getParameter("id"));
 		CommandeDAO cd = new CommandeDAO(ConnexionBDD.getConn());
 		panier = cd.recupererDetailCommande(idCommande);
-		System.out.println(panier);
+		date = cd.recupererDateCommande(idCommande);
 	}
 	
 	ArrayList<Panier> listePanier = (ArrayList<Panier>) session.getAttribute("liste-panier");
@@ -46,7 +48,7 @@
 	
 	<div class="container">
 		<div class="d-flex py-3">
-			<h3>Detail</h3>
+			<h3>Detail de la commande du <%=date %></h3>
 		</div>
 		<table class="table table-loght">
 			<thead>
@@ -72,12 +74,13 @@
 					<td><%=p.getQuantite()*p.getPrix() %> €</td>
 				</tr>
 			<%
+						total += (p.getQuantite()*p.getPrix());
 					}
 				}
 			%>
 			</tbody>
 		</table>
-	
+		<h3>Prix total : <%=total %> €</h3>
 	</div>
 	
 	

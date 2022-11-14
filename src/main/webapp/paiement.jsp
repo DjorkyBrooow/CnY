@@ -43,7 +43,7 @@
 <html>
 <head>
 <title>CnY - Paiement</title>
-	<%@include file="inclusions/pied.jsp" %>
+	<%@include file="inclusions/entete.jsp" %>
 </head>
 <body>
 	

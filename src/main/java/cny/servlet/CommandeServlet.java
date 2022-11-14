@@ -24,7 +24,7 @@ public class CommandeServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try (PrintWriter out = response.getWriter()){
-			SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss dd-MM-yyyy");
+			SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 			Date date = new Date();
 			
 			Utilisateur auth = (Utilisateur) request.getSession().getAttribute("auth");
