@@ -103,23 +103,24 @@ public class CommandeDAO {
 	
 	public ArrayList<Panier> recupererDetailCommande(int idCommande){
 		ArrayList<Panier> listePanier = new ArrayList<Panier>();
-		requete = "SELECT * FROM `article_panier` WHERE (`fk_c_id`=?)";
+		requete = "SELECT `fk_p_id`,`ap_quantite` FROM `article_panier` WHERE (`fk_c_id`=?) ORDER BY `fk_c_id` DESC";
 		try {
 			pst = this.conn.prepareStatement(requete);
 			pst.setInt(1, idCommande);
 			resultat = pst.executeQuery();
-			
+			int i=1;
 			while (resultat.next()) {
-				Produit produit = recupererInfoProduit(Integer.parseInt(resultat.getString("fk_p_id")));
 				Panier p = new Panier();
+				p.setQuantite(resultat.getInt("ap_quantite"));
+				Produit produit = recupererInfoProduit(resultat.getInt("fk_p_id"));
 				p.setId(produit.getId());
 				p.setNom(produit.getNom());
 				p.setCategorie(produit.getCategorie());
 				p.setImage(produit.getImage());
 				p.setPrix(produit.getPrix());
-				p.setQuantite(Integer.parseInt(resultat.getString("ap_quantite")));
 				listePanier.add(p);
-				
+				System.out.println(i++);
+				System.out.println(resultat.next());
 			}
 			
 		} catch (Exception e) {
