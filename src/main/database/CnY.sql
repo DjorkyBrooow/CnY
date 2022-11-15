@@ -43,12 +43,12 @@ CREATE TABLE `produit` (
   `p_categorie` varchar(255) NOT NULL,
   `p_prix` double NOT NULL,
   `p_image` varchar(255) NOT NULL,
-  UNIQUE KEY `p_image_UNIQUE` (`p_image`),
   PRIMARY KEY (`p_id`)
 );
 
-INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`) VALUES ('t-shirt','t-shirt haut',15,'tshirt.webp'),('polo','polo haut',20,'polo.webp'),('chemise','chemise haut',35,'chemise.webp'),('jean','pantalon jean bas',35,'jean.webp'),('jupe','jupe bas femme',25,'jupe.webp'),('pull','pull haut',30,'pull.webp'),('robe','robe tenue',60,'robe.webp'),('sweat','sweat pull haut',30,'sweat.webp');
-
+INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`) VALUES ('t-shirt blanc','t-shirt haut',15,'tshirt_blanc'),('polo bleue','polo haut',30,'polo_bleue'),('chemise noire','chemise haut',35,'chemise_noire'),('jean bleu','pantalon jean bas',35,'jean_bleu'),('jupe','jupe bas femme',30,'jupe'),('sweat en laine','sweat haut',40,'sweat_laine'),('robe','robe tenue',60,'robe'),('sweat','sweat pull haut',30,'sweat');
+INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`) VALUES ('bermuda marron','bermuda bas',13,'bermuda_marron'),('doudoune noire','doudoune haut',50,'doudoune_noire'),('doudoune orange','doudoune haut',45,'doudoune_orange'),('jogging','jogging bas',25,'jogging'),('polo violet','polo haut',30,'polo_violet'),('t-shirt rose','t-shirt haut',15,'tshirt_rose'),('t-shirt sport','t-shirt haut',15,'tshirt_sport');
+INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`) VALUES ('veste bleue','veste haut',45,'veste_bleue'),('veste grise','veste haut',40,'veste_grise'),('veste à capuche','veste haut',45,'veste_capuche'),('veste noire','veste haut',40,'veste_noire'),('veste de sport','veste haut',40,'veste_sport');
 
 DROP TABLE IF EXISTS `article_panier`;
 CREATE TABLE `article_panier` (
