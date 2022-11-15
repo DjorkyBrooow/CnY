@@ -3,10 +3,13 @@
 <%@page import="cny.accesbdd.*" %>
 <%@page import="java.util.List" %>
 <%@page import="java.util.ArrayList" %>
+<%@page import="java.text.DecimalFormat" %>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%
+	DecimalFormat dcf = new DecimalFormat("#.##");
+	request.setAttribute("dcf",dcf);
 	Utilisateur auth = (Utilisateur) request.getSession().getAttribute("auth");
 	UtilisateurDAO uDAO = new UtilisateurDAO(ConnexionBDD.getConn());
 
@@ -25,7 +28,7 @@
 	if (listePanier != null){
 		request.setAttribute("panier",listePanier);
 	}
-	
+
 	ProduitDAO pd = new ProduitDAO(ConnexionBDD.getConn());
 	List<Produit> liste = pd.tousLesProduits();
 %>
@@ -34,15 +37,44 @@
 <head>
 	<title>CnY - Admin</title>
 	<%@include file="inclusions/entete.jsp" %>
+	<style>
+		img {
+			width: 150px; 
+			height: 150px; 
+			object-fit: contain; 
+		}
+	</style>
 </head>
 <body>
 	<%@include file="inclusions/navbar.jsp" %>
 	
 	<h1>Gestion des articles</h1>
-	
-	
-	
-	
+	<a href="ajouterarticle" class="btn btn-warning">Ajouter un article</a>
+	<div class="container">
+		<div class="card-header my-3">Tous les produits</div>
+		<div class="row">
+		<% 
+		if (!liste.isEmpty()){ 
+			for(Produit p:liste){
+		%>
+			<div class="col-md-3 my-3">
+				<div class="card" style="width: 18rem;">
+					<img src="img_produits/<%=p.getImage() %>" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title"><%=p.getNom() %></h5>
+						<h6 class="price">Price : <%=dcf.format(p.getPrix()) %>€</h6>
+						<h6 class="category">Catégories : <%=p.getCategorie() %></h6>
+						<a href="modifProduit.jsp?id=<%=p.getId() %>" class="btn btn-primary">Modifier</a>
+						<a href="supprimer?id=<%=p.getId() %>" class="btn btn-danger">Supprimer</a>
+					</div>
+				</div>
+			</div>
+		<% 
+			}
+		} 
+		%>
+		</div>
+	</div>
 	
 	
 	<%@include file="inclusions/pied.jsp" %>

@@ -67,7 +67,7 @@
 				
 			%>
 				<tr>
-					<td><img src="img_produits/<%=p.getImage() %>.webp"></td>
+					<td><img src="img/img_produits/<%=p.getImage() %>"></td>
 					<td><%=p.getNom() %></td>
 					<td><%=p.getCategorie() %></td>
 					<td><%=p.getQuantite() %></td>

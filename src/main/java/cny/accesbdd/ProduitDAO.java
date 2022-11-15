@@ -98,4 +98,25 @@ public class ProduitDAO {
 		return somme;
 	}
 	
+	public boolean actualiserProduit(int idProduit, String image, String nom, double prix, String categorie) {
+		boolean retour = false;
+		try {
+			requete = "UPDATE `produit` SET  `p_image`=?, `p_nom`=?,`p_prix`=?,`p_categorie`=? WHERE `p_id`=?";
+			pst = this.conn.prepareStatement(requete);
+			pst.setString(1, image);
+			pst.setString(2, nom);
+			pst.setDouble(3, prix);
+			pst.setString(4, categorie);
+			pst.setInt(5, idProduit);
+			pst.executeUpdate();
+			retour = true;
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return retour;
+	}
+	
+	
 }

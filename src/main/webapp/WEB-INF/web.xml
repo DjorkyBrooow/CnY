@@ -79,4 +79,14 @@
     <servlet-name>CommandeServlet</servlet-name>
     <url-pattern>/commande</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ModifierProduitServlet</display-name>
+    <servlet-name>ModifierProduitServlet</servlet-name>
+    <servlet-class>cny.servlet.ModifierProduitServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifierProduitServlet</servlet-name>
+    <url-pattern>/modifierproduit</url-pattern>
+  </servlet-mapping>
 </web-app>

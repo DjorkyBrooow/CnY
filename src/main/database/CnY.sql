@@ -43,10 +43,11 @@ CREATE TABLE `produit` (
   `p_categorie` varchar(255) NOT NULL,
   `p_prix` double NOT NULL,
   `p_image` varchar(255) NOT NULL,
+  UNIQUE KEY `p_image_UNIQUE` (`p_image`),
   PRIMARY KEY (`p_id`)
 );
 
-INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`) VALUES ('t-shirt','t-shirt haut',15,'tshirt'),('polo','polo haut',20,'polo'),('chemise','chemise haut',35,'chemise'),('jean','pantalon jean bas',35,'jean'),('jupe','jupe bas femme',25,'jupe'),('pull','pull haut',30,'pull'),('robe','robe tenue',60,'robe'),('sweat','sweat pull haut',30,'sweat');
+INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`) VALUES ('t-shirt','t-shirt haut',15,'tshirt.webp'),('polo','polo haut',20,'polo.webp'),('chemise','chemise haut',35,'chemise.webp'),('jean','pantalon jean bas',35,'jean.webp'),('jupe','jupe bas femme',25,'jupe.webp'),('pull','pull haut',30,'pull.webp'),('robe','robe tenue',60,'robe.webp'),('sweat','sweat pull haut',30,'sweat.webp');
 
 
 DROP TABLE IF EXISTS `article_panier`;

@@ -1,0 +1,247 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: #d5bc7b;
+}
+
+/* ---------- NAVBAR BEGIN ---------- */
+.navbar {
+	position: sticky;
+	color: white;
+	box-shadow: 0px 2px 30px black;
+	background-color: #9b8a5e;
+	z-index: 5;
+	font-size: 1.3em;
+	width: 100%;
+	top: 0;
+}
+
+/* ---------- NAVBAR END ---------- */
+
+/* ---------- HOME BEGIN ---------- */
+#img-accueil {
+	z-index: -100;
+	position: fixed;
+	top: -100px;
+	left: 0;
+	width: 100%;
+	min-width: 100%;
+	min-height: 100%;
+	position: fixed;
+}
+
+.text-div {
+	position: fixed;
+	top: 40vh;
+	left: 30vh;
+	z-index: 10;
+}
+
+/* #cny-fond { */
+/* 	font-size: 25em; */
+/* 	filter: opacity(0.2); */
+/* 	position: fixed; */
+/* 	top: 15vh; */
+/* 	left: 15vh; */
+/* } */
+.boutique-home {
+	text-decoration: none;
+}
+
+#logo {
+	max-width: 60px;
+}
+
+.div-center {
+	width: 50%;
+	height: 50%;
+	background-color: red;
+	z-index: 10;
+}
+
+.text-div a {
+	color: white;
+	transition: 0.5s;
+	background-color: #171617;
+	border: 5px solid #171617;
+	border-radius: 10px;
+	position: fixed;
+	left: 48vh;
+	top: 50vh;
+	padding: 20px;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+
+.text-div a:hover {
+	color: white !important;
+	background-color: #9b8a5e;
+	border: 5px solid #171617;
+}
+
+#log {
+	transition: 0.5s;
+	background-color: #171617;
+	border-radius: 10px;
+	padding: 0px 5px 0px 5px;
+}
+
+#log:hover {
+	transform: scale(1.02);
+}
+
+#log a {
+	color: white;
+}
+
+#fond-logo-cny {
+	width: 40%;
+	filter: opacity(0.2);
+	position: fixed;
+	top: 30vh;
+	left: 20vh;
+}
+
+.boutique-img img {
+	/* 			width: 150px;  */
+	height: 150px;
+	object-fit: contain;
+}
+
+.button-boutique {
+	color: white;
+	transition: 0.5s;
+	background-color: #171617;
+	border: 5px solid #171617;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+
+.button-boutique:hover {
+	color: black !important;
+	background-color: #9b8a5e;
+	border: 5px solid #171617;
+}
+
+/* .text-div a { */
+/* 	color: white; */
+/* } */
+
+/* ---------- HOME END ---------- */
+
+/* ---------- BOUTIQUE BEGIN ---------- */
+.boutique {
+	position: relative;
+}
+
+.titre-boutique {
+	font-weight: 500;
+	text-align: center;
+	font-size: 2.2em;
+}
+
+.card {
+	border: none !important;
+	background-color: #9b8a5e !important;
+	box-shadow: rgb(0 0 0/ 35%) 0px 5px 15px;
+}
+
+.card-body {
+	text-align: center;
+}
+/* ---------- BOUTIQUE END ---------- */
+
+/* ---------- FOOTER BEGIN ---------- */
+footer {
+	position: relative;
+	bottom: 0;
+}
+
+.div-footer {
+	margin-top: 5%;
+	box-shadow: 0px 2px 30px black;
+	background-color: #9b8a5e;
+	padding-bottom: 0.5%;
+}
+
+.container-footer-column {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-bottom: 0.5%;
+}
+
+.container-footer-titre {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2%;
+}
+
+.container-footer-column>div {
+	width: 20%;
+	text-align: left;
+	font-size: 1.2em;
+	text-align: left;
+}
+
+.container-footer-titre>div {
+	width: 20%;
+	text-align: left;
+	font-size: 1.2em;
+	margin-top: 2%;
+}
+
+.div-footer li {
+	list-style-type: none
+}
+
+.li-titre {
+	font-weight: bold;
+}
+.container-footer-column a{
+	color: #0000008C;
+	text-decoration: none;
+	transition: 0.5s;
+}
+.container-footer-column a:hover{
+	color: black;
+	text-decoration: none;
+}
+
+
+/* ---------- FOOTER END ---------- */
+
+/* ---------- TEST FLOU BEGIN ---------- */
+.container-accueil {
+	background:
+		url(https://acseo.ams3.digitaloceanspaces.com/tf1-sos-villages/uploads/files/a2bebd2cacac48ec31c397a8896bacca.jpg)
+		no-repeat center center fixed;
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: fixed;
+}
+
+.div-accueil {
+	background:
+		url(https://acseo.ams3.digitaloceanspaces.com/tf1-sos-villages/uploads/files/a2bebd2cacac48ec31c397a8896bacca.jpg)
+		no-repeat center center fixed;
+	background-size: cover;
+	overflow: hidden;
+	filter: blur(13px);
+	position: absolute;
+	width: 700px;
+	height: 500px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+/* ---------- TEST FLOU BEGIN ---------- */
