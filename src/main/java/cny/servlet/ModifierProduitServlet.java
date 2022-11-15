@@ -52,9 +52,9 @@ public class ModifierProduitServlet extends HttpServlet {
 				boolean resultat = pd.actualiserProduit(idProduit,image,nom,prix,categorie);
 				
 				if (resultat) {
-					System.out.print("réussi");
+					System.out.print("modification réussie");
 				} else {
-					System.out.print("raté");
+					System.out.print("modification ratée");
 				}
 				response.sendRedirect("modifProduit.jsp?id="+idProduit);
 			} catch (Exception e) {

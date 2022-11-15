@@ -119,4 +119,21 @@ public class ProduitDAO {
 	}
 	
 	
+	public boolean supprimerProduit(int idProduit) {
+		boolean retour = false;
+		
+		try {
+			requete = "DELETE FROM `produit` WHERE `p_id`=?";
+			pst = this.conn.prepareStatement(requete);
+			pst.setInt(1, idProduit);
+			pst.executeUpdate();
+			retour = true;
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return retour;
+	}
+	
 }

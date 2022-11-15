@@ -43,7 +43,9 @@ public class UtilisateurDAO {
 	
 	public boolean verifAdmin(Utilisateur u) {
 		boolean retour = false;
-		
+		if (u == null) {
+			return retour;
+		}
 		try {
 			requete = "SELECT `r_nom` from `role` WHERE `r_id`=(SELECT `fk_r_id` FROM `utilisateur` WHERE `u_id`=?)";
 			pst = this.conn.prepareStatement(requete);
