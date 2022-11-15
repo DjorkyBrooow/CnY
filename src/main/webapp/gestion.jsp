@@ -47,7 +47,7 @@
 	<h1>Gestion des articles</h1>
 	<div class="container">
 		<div class="card-header my-3">Tous les produits</div>
-		<a href="ajouterarticle" class="btn btn-warning">Ajouter un produit</a>
+		<a href="ajoutProduit.jsp" class="btn btn-warning">Ajouter un produit</a>
 		<div class="row">
 		<% 
 		if (!liste.isEmpty()){ 

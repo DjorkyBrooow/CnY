@@ -50,7 +50,7 @@
 		<table class="table table-panier">
 			<thead>
 				<tr>
-					<th scope="col">Name</th>
+					<th scope="col">Nom</th>
 					<th scope="col">Prix</th>
 					<th scope="col">Quantité</th>
 					<th scope="col">Annuler</th>

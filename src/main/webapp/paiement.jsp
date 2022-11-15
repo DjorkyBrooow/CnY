@@ -37,7 +37,7 @@
 		if (panier.size()==0 || panier == null){
 			response.sendRedirect("boutique.jsp");
 		}
-	}
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -82,7 +82,7 @@
 		<a class="mx-3 btn btn-primary" href="commande">Confirmer le paiement</a>
 	</div>
 	
-
+	<% } %>
 	<%@include file="inclusions/pied.jsp" %>
 
 </body>

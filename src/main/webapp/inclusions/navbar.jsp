@@ -36,7 +36,7 @@ boolean verifAdmin = uVerif.verifAdmin(auth);
 					%>
 					<li class="nav-item"><a class="nav-link" href="monCompte.jsp">Mon
 							compte</a></li>
-					<li class="nav-item log"><a class="nav-link" href="logout">DÃ©connexion</a></li>
+					<li class="nav-item log"><a class="nav-link" href="logout">Déconnexion</a></li>
 					<%
 					} else {
 					%>

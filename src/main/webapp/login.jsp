@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="cny.connexion.ConnexionBDD"%>
 <%@page import="cny.modele.*"%>
 <%@page import="cny.accesbdd.*"%>
@@ -62,7 +62,7 @@ if (listePanier != null) {
 				<form action="signin" method="post">
 					<div>
 						<label for="prenom">Prénom</label> <input id="prenom" type="text"
-							name="prenom" placeholder="pr�nom" required>
+							name="prenom" placeholder="prénom" required>
 					</div>
 					<div>
 						<label for="email">Adresse mail</label> <input id="email"
