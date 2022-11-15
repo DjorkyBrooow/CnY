@@ -41,12 +41,13 @@
 <body>
 	<%@include file="inclusions/navbar.jsp" %>
 	
-	<div class="container">
-		<div class="d-flex py-3">
-			<h3>Prix total : ${(total>0)?dcf.format(total):0 }€</h3>
-			<a class="mx-3 btn btn-primary" href="paiement.jsp">Payer</a>
-		</div>
-		<table class="table table-loght">
+	<div class="container container-panier">
+	
+	<div class="titre-boutique">
+		Résumé de votre panier
+	</div>
+		
+		<table class="table table-panier">
 			<thead>
 				<tr>
 					<th scope="col">Name</th>
@@ -82,6 +83,14 @@
 			%>
 			</tbody>
 		</table>
+		
+		<div class="container-end-panier">
+			<h3>Prix total : ${(total>0)?dcf.format(total):0 }€</h3>
+			<div class="button-panier">
+				<a class="mx-3 btn" href="paiement.jsp">Payer</a>
+			</div>
+			
+		</div>
 	
 	</div>
 	
