@@ -39,7 +39,7 @@ if (listePanier != null) {
 		<img id="fond-logo-cny" src="img/CnY_Logo.png" alt="LogoCnY">
 
 		<h3>
-			<a class="boutique-home" style="color: white;" href="boutique.jsp">Voir la boutique</a>
+			<a class="boutique-home" href="boutique.jsp">Voir la boutique</a>
 		</h3>
 
 	</div>
