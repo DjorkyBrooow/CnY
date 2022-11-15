@@ -17,7 +17,7 @@
 		</div>
 		<div class="container-footer-column">
 			<div class="footer-column">
-				<img alt="" src="img_produits/CnY Logo.png" width="35%">
+				<img alt="" src="img/CnY_Logo.png" width="35%">
 			</div>
 			<div class="footer-column1">
 				<ul>

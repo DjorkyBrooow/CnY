@@ -5,7 +5,10 @@
 <%@page import="java.util.ArrayList" %>
 <%@page import="java.text.DecimalFormat" %>
 
-
+<% 
+UtilisateurDAO uVerif = new UtilisateurDAO(ConnexionBDD.getConn());
+boolean verifAdmin = uVerif.verifAdmin(auth); 
+%>
 
 <nav class="navbar navbar-expand-lg">
 		<div class="container-fluid">
@@ -22,11 +25,14 @@
 					<li class="nav-item"><a class="nav-link active"
 						aria-current="page" href="index.jsp">Accueil</a></li>
 					<li class="nav-item"><a class="nav-link" href="boutique.jsp">Boutique</a></li>
-					<li class="nav-item"><a class="nav-link" href="panier.jsp">Panier<span
+					<li class="nav-item"><a class="nav-link" href="panier.jsp">Panier <span
 							class="badge text-bg-danger px-1">${panier.size() }</span></a></li>
+					<%
+					if (verifAdmin){
+					%>
 					<li class="nav-item"><a class="nav-link" href="gestion.jsp">Gestion</a></li>
 					<%
-					if (auth != null) {
+					} if (auth != null) {
 					%>
 					<li class="nav-item"><a class="nav-link" href="monCompte.jsp">Mon
 							compte</a></li>
