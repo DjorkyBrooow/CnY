@@ -13,11 +13,13 @@
 	Utilisateur auth = (Utilisateur) request.getSession().getAttribute("auth");
 	UtilisateurDAO uDAO = new UtilisateurDAO(ConnexionBDD.getConn());
 
+	boolean admin = false;
+	
 	if (auth == null){
 		response.sendRedirect("login.jsp");
 	} else {
 		request.setAttribute("auth", auth);
-		boolean admin = uDAO.verifAdmin(auth);
+		admin = uDAO.verifAdmin(auth);
 	
 		if (!admin) {
 			response.sendRedirect("index.jsp");
@@ -37,21 +39,15 @@
 <head>
 	<title>CnY - Admin</title>
 	<%@include file="inclusions/entete.jsp" %>
-	<style>
-		img {
-			width: 150px; 
-			height: 150px; 
-			object-fit: contain; 
-		}
-	</style>
+	
 </head>
 <body>
 	<%@include file="inclusions/navbar.jsp" %>
 	
 	<h1>Gestion des articles</h1>
-	<a href="ajouterarticle" class="btn btn-warning">Ajouter un article</a>
 	<div class="container">
 		<div class="card-header my-3">Tous les produits</div>
+		<a href="ajouterarticle" class="btn btn-warning">Ajouter un produit</a>
 		<div class="row">
 		<% 
 		if (!liste.isEmpty()){ 
@@ -59,13 +55,13 @@
 		%>
 			<div class="col-md-3 my-3">
 				<div class="card" style="width: 18rem;">
-					<img src="img_produits/<%=p.getImage() %>" class="card-img-top" alt="...">
+					<img src="img/img_produits/<%=p.getImage() %>" class="card-img-top" alt="...">
 					<div class="card-body">
 						<h5 class="card-title"><%=p.getNom() %></h5>
 						<h6 class="price">Price : <%=dcf.format(p.getPrix()) %>€</h6>
 						<h6 class="category">Catégories : <%=p.getCategorie() %></h6>
 						<a href="modifProduit.jsp?id=<%=p.getId() %>" class="btn btn-primary">Modifier</a>
-						<a href="supprimer?id=<%=p.getId() %>" class="btn btn-danger">Supprimer</a>
+						<a href="supprProduit.jsp?id=<%=p.getId() %>" class="btn btn-danger">Supprimer</a>
 					</div>
 				</div>
 			</div>

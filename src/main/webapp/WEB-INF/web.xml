@@ -89,4 +89,14 @@
     <servlet-name>ModifierProduitServlet</servlet-name>
     <url-pattern>/modifierproduit</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SupprimerProduitServlet</display-name>
+    <servlet-name>SupprimerProduitServlet</servlet-name>
+    <servlet-class>cny.servlet.SupprimerProduitServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SupprimerProduitServlet</servlet-name>
+    <url-pattern>/supprimerproduit</url-pattern>
+  </servlet-mapping>
 </web-app>

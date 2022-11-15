@@ -54,13 +54,12 @@
 <body>
 	<%@include file="inclusions/navbar.jsp" %>
 	<% if (p != null && idProduit != 0) {%>
-	<h3>Modification du produit <%=p.getNom() %></h3>
+	<h3>Suppression du produit <%=p.getNom() %></h3>
 	
 	<div class="container">
-	
 		<a class="btn btn-danger" href="gestion.jsp">Retour</a>
 		<div class="d-flex py-3">
-			<h3>Informations actuelles</h3>
+			<h3>Informations</h3>
 		</div>
 		<table class="table table-loght">
 			<thead>
@@ -80,27 +79,13 @@
 				</tr>
 			</tbody>
 		</table>
+		
+		<a class="btn btn-primary" href="supprimerproduit?id=<%=idProduit %>">Confirmer la suppression</a>
+		
 	</div>
-	
-	<div class="container">
-		<form action="modifierproduit?id=<%=idProduit %>" method="post">
-			<label for="image">Image</label>
-			<input class="form-group" type="text" placeholder="Nom du fichier image" name="image">
-			<label for="nom">Nom</label>
-			<input class="form-group" type="text" placeholder="Nom de l'article" name="nom">
-			<label for="prix">Prix</label>
-			<input class="form-group" type="text" placeholder="Prix de l'article" name="prix">
-			<label for="categorie">Catégories</label>
-			<input class="form-group" type="text" placeholder="Catégories de l'article" name="categorie">
-			<button class="btn btn-primary" type="submit">Valider</button>
-		</form>
-	</div>
-	
-	
-	<%} else { %>
-	<h3>Aucun produit ne correspond à votre recherche</h3>
 	<% } %>
-
+	
+	
 	<%@include file="inclusions/pied.jsp" %>
 </body>
 </html>
