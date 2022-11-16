@@ -38,12 +38,12 @@ if (listePanier != null) {
 				<form class="form-connexion" action="login" method="post">
 					<div>
 						<label for="email">Adresse mail</label> <input id="email"
-							type="email" name="email" placeholder="adresse mail" required>
+							type="email" name="email" placeholder="Adresse mail" required>
 					</div>
 	
 					<div>
 						<label for="mdp">Mot de passe</label> <input id="mdp"
-							type="password" name="mdp" placeholder="mot de passe" required>
+							type="password" name="mdp" placeholder="Mot de passe" required>
 					</div>
 	
 	
@@ -62,15 +62,15 @@ if (listePanier != null) {
 				<form action="signin" method="post">
 					<div>
 						<label for="prenom">Prénom</label> <input id="prenom" type="text"
-							name="prenom" placeholder="pr�nom" required>
+							name="prenom" placeholder="Prénom" required>
 					</div>
 					<div>
 						<label for="email">Adresse mail</label> <input id="email"
-							type="email" name="email" placeholder="adresse mail" required>
+							type="email" name="email" placeholder="Adresse mail" required>
 					</div>
 					<div>
 						<label for="mdp">Mot de passe</label> <input id="mdp"
-							type="password" name="mdp" placeholder="mot de passe" required>
+							type="password" name="mdp" placeholder="Mot de passe" required>
 					</div>
 					<div>
 						<button type="submit" class="button-log">S'inscrire</button>
