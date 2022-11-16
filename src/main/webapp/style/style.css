@@ -31,7 +31,9 @@ body {
 .log a {
 	color: white !important;
 }
-
+.nom-navbar{
+	color: #171617;
+}
 /* ---------- NAVBAR END ---------- */
 
 /* ---------- HOME BEGIN ---------- */
@@ -164,6 +166,7 @@ body {
 .table-panier{
 	margin:2% 5% 2% 5%;
 	width: 90%;
+	vertical-align: middle;
 }
 
 .table-panier tbody, td, tfoot, th, tr {
@@ -179,7 +182,7 @@ body {
 }
 
 .button-panier a {
-	width: 15%;
+/* 	width: 15%; */
     color: white;
     transition: 0.5s;
     background-color: #171617;
@@ -197,6 +200,47 @@ body {
 }
 
 /* ---------- PANIER END ---------- */
+
+/* ---------- PAIEMENT BEGIN ---------- */
+
+/* ---------- PAIEMENT END ---------- */
+
+/* ---------- HISTORIQUE BEGIN ---------- */
+
+.button-historique a{
+	color: white;
+    transition: 0.5s;
+    background-color: #171617;
+    border: 5px solid #171617;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.button-historique a:hover {
+	color: black !important;
+	background-color: #9b8a5e;
+	border: 5px solid #171617;
+}
+
+/* ---------- HISTORIQUE END ---------- */
+
+/* ---------- DETAIL BEGIN ---------- */
+
+.button-detail a{
+	margin-left: 5%;
+	color: white;
+    transition: 0.5s;
+    background-color: #171617;
+    border: 5px solid #171617;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.button-detail a:hover {
+	color: black !important;
+	background-color: #9b8a5e;
+	border: 5px solid #171617;
+}
+
+/* ---------- DETAIL END ---------- */
 
 /* ---------- LOGIN BEGIN ---------- */
 

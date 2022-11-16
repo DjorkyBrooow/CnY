@@ -46,12 +46,17 @@
 	
 	<%@include file="inclusions/navbar.jsp" %>
 	
-	<div class="container">
-		<a class="btn btn-primary" href="historique.jsp">Retour</a>
-		<div class="d-flex py-3">
-			<h3>Detail de la commande du <%=date %></h3>
-		</div>
-		<table class="table table-loght">
+	<div class="container container-panier">
+			<div class="button-detail">
+				<a class="btn" href="historique.jsp">Retour</a>
+			</div>
+		
+		
+		<div class="titre-boutique">
+		Detail de la commande du <%=date %>
+	</div>
+		
+		<table class="table table-panier">
 			<thead>
 				<tr>
 					<th scope="col">Article</th>
@@ -81,7 +86,10 @@
 			%>
 			</tbody>
 		</table>
-		<h3>Prix total : <%=total %> €</h3>
+		
+		<div class="container-end-panier">
+			<h3>Prix total : <%=total %> €</h3>
+		</div>
 	</div>
 	
 	

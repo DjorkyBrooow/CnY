@@ -62,7 +62,7 @@ if (listePanier != null) {
 				<form action="signin" method="post">
 					<div>
 						<label for="prenom">Prénom</label> <input id="prenom" type="text"
-							name="prenom" placeholder="prénom" required>
+							name="prenom" placeholder="pr�nom" required>
 					</div>
 					<div>
 						<label for="email">Adresse mail</label> <input id="email"
