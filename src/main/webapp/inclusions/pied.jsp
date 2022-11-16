@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <footer>
 
 	<div class="div-footer">
@@ -5,7 +7,7 @@
 		<div></div>
 			<div>
 				<ul>
-					<li class="li-titre">Différents liens</li>
+					<li class="li-titre">DiffÃ©rents liens</li>
 				</ul>
 			</div>
 			<div>
