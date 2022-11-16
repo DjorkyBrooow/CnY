@@ -55,7 +55,8 @@ if (listePanier != null) {
 					<td><%=c.getPrix()%> €</td>
 					<td>
 						<div class="button-historique">
-							<a class="mx-3 btn" href="detail.jsp?id=<%=c.getIdCommande()%>">Voir le détail</a>
+							<a class="mx-3 btn" href="detail.jsp?id=<%=c.getIdCommande()%>">Voir
+								le détail</a>
 						</div>
 					</td>
 				</tr>
@@ -66,8 +67,17 @@ if (listePanier != null) {
 			</tbody>
 		</table>
 
+		<div class="container-end-panier">
+
+			<div class="button-panier">
+				<a class="mx-3 btn button-table" href="monCompte.jsp">Voir mes
+					informations personnelles</a>
+			</div>
+		</div>
+
 	</div>
-	<a href="monCompte.jsp"><h3>Mes informations personnelles</h3></a>
+
+
 
 	<%@include file="inclusions/pied.jsp"%>
 

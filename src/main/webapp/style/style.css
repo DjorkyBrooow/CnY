@@ -154,6 +154,10 @@ body {
 .card-body {
 	text-align: center;
 }
+
+.button-nostock{
+	
+}
 /* ---------- BOUTIQUE END ---------- */
 
 /* ---------- PANIER BEGIN ---------- */
@@ -183,10 +187,7 @@ body {
 
 .button-panier a {
 /* 	width: 15%; */
-    color: white;
-    transition: 0.5s;
-    background-color: #171617;
-    border: 5px solid #171617;
+    
     border-radius: 10px;
     transition: 0.5s;
     margin: 1% 0% 0% 0%;
@@ -194,6 +195,15 @@ body {
 }
 
 .button-panier a:hover {
+	
+}
+
+.button-table{
+	color: white;
+    background-color: #171617;
+    border: 5px solid #171617;
+}
+.button-table:hover{
 	color: black !important;
 	background-color: #9b8a5e;
 	border: 5px solid #171617;
@@ -202,6 +212,28 @@ body {
 /* ---------- PANIER END ---------- */
 
 /* ---------- PAIEMENT BEGIN ---------- */
+
+/* .button-paiement{ */
+/* 	color: white; */
+/*     background-color: #171617; */
+/*     border: 5px solid #171617; */
+/* } */
+/* .button-paiement:hover{ */
+/* 	color: black !important; */
+/* 	background-color: #9b8a5e; */
+/* 	border: 5px solid #171617; */
+/* } */
+
+.button-corriger{
+	background-color: #dc3545;
+	border:5px solid #dc3545;
+		color: white !important;
+	
+}
+.button-corriger:hover{
+	background-color: #bb2d3b;
+    border-color: #bb2d3b;
+}
 
 /* ---------- PAIEMENT END ---------- */
 
@@ -242,10 +274,142 @@ body {
 
 /* ---------- DETAIL END ---------- */
 
+/* ---------- GESTION BEGIN ---------- */
+
+.button-suppr{
+	color: white !important;
+	background-color: #dc3545;
+	border: 5px solid #dc3545;
+	
+}
+.button-suppr:hover{
+	color: white;
+	background-color: #bb2d3b;
+	border: 5px solid #bb2d3b;
+}
+
+.button-add{
+	color: white !important;
+	background-color: #23A229;
+	border: 5px solid #23A229;
+	
+}
+.button-add:hover{
+	color: white;
+	background-color: #208C25;
+	border: 5px solid #208C25;
+}
+.button-modifier{
+	color: white ;
+	transition: 0.5s;
+	background-color: #171617;
+	border: 5px solid #171617;
+	
+}
+.button-modifier:hover{
+	color: black !important;
+	border: 5px solid #171617;
+	background-color: #9b8a5e;
+}
+
+
+
+/* ---------- GESTION END ---------- */
+
+/* ---------- MONCOMPTE BEGIN ---------- */
+
+.table-pm{
+	margin: 2% 30% 2% 30%;
+    width: 40%;
+}
+.infos{
+	width: 40%;
+    margin: 2% 30% 2% 30%;
+    padding: 0;
+}
+.infos input{
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 3%;
+}
+.titre-compte{
+	margin-bottom: 3%;
+	font-size: 1.5em;
+}
+
+.button-compte {
+	width: 100%;
+    color: white;
+    transition: 0.5s;
+    background-color: #23A229;
+    border: 5px solid #23A229;
+    border-radius: 10px;
+    transition: 0.5s;
+    padding: 2%;
+    margin: 2% 0% 0% 0%;
+}
+
+.button-compte:hover {
+	color: black !important;
+	background-color: #208C25;
+	border: 5px solid #208C25;
+}
+.divcompte{
+	text-align:center;
+}
+
+/* ---------- MONCOMPTE END ---------- */
+
+/* ---------- MODIFPRODUIT BEGIN ---------- */
+
+.titre-tableau-modif{
+	margin-left: 5%;
+}
+
+.form-modif{
+	margin: 0% 5% 0% 5%;
+    display: flex;
+    flex-direction: row;
+}
+.form-modif input{
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 3%;
+}
+.form-modif label{
+	margin-bottom: 2%;
+}
+
+.flex-modif{
+	width: 40%;
+	margin: 0% 5%;
+}
+.button-modif{
+	width: 100%;
+	
+}
+/* ---------- MODIFPRODUIT END ---------- */
+
+/* ---------- SUPPRPRODUIT BEGIN ---------- */
+
+.center-button-suppr{
+	text-align: center;
+}
+
+/* ---------- SUPPRPRODUIT END ---------- */
+
 /* ---------- LOGIN BEGIN ---------- */
 
-input{
-  margin: 0% 5% 0% 5%;
+.container-log input{
+  	margin: 0% 5% 0% 5%;
     width: 80%;
     padding: 12px 20px;
     display: inline-block;

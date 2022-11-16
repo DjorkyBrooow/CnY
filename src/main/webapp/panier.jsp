@@ -50,7 +50,7 @@
 		<table class="table table-panier">
 			<thead>
 				<tr>
-					<th scope="col">Nom</th>
+					<th scope="col">Name</th>
 					<th scope="col">Prix</th>
 					<th scope="col">Quantité</th>
 					<th scope="col">Annuler</th>
@@ -87,7 +87,7 @@
 		<div class="container-end-panier">
 			<h3>Prix total : ${(total>0)?dcf.format(total):0 }€</h3>
 			<div class="button-panier">
-				<a class="mx-3 btn" href="paiement.jsp">Payer</a>
+				<a class="mx-3 btn button-table" href="paiement.jsp">Payer</a>
 			</div>
 			
 		</div>

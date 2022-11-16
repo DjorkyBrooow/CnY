@@ -30,9 +30,12 @@
 <body>
 	<%@include file="inclusions/navbar.jsp" %>
 	
-	<h3>Informations personnelles</h3>
+	<div class="container container-panier">
 	
-	<table>
+	
+	<div class="titre-boutique">Informations personnelles</div>
+	
+	<table class="table-pm">
 		<thead>
 			<tr>
 				<th scope="col">Prénom</th>
@@ -49,8 +52,8 @@
 		</tbody>
 	
 	</table>
-	<div class="container">
-		<div><h5>Modifier les informations</h5></div>
+	<div class="container infos">
+		<div class="titre-compte">Modifier les informations</div>
 		<form action="modifierutilisateur">
 			<div>
 				<label for="prenom">Prénom</label>
@@ -68,10 +71,15 @@
 				<label for="nouveaumdp">Nouveau mot de passe</label>
 				<input type="password" name="nouveaumdp" id="nouveaumdp" placeholder="Nouveau mot de passe">
 			</div>
-			<button type="submit">Valider</button>
+			<button type="submit" class="button-compte">Valider</button>
 		</form>
 	</div>
-	<a href="historique.jsp"><h3>Historique</h3></a>
+	<div class="button-panier divcompte">
+		<a class="mx-3 btn button-table" href="historique.jsp">Voir mes anciennes commandes</a>
+	</div>
+	
+	
+	</div>
 	
 	<%@include file="inclusions/pied.jsp" %>
 

@@ -82,9 +82,9 @@ if (auth == null) {
 
 		<div class="container-end-panier">
 			<h3>Prix total : ${(total>0)?dcf.format(total):0 }€</h3>
-			<div class="button-panier button-paiement">
-				<a href="panier.jsp" class="btn btn-danger mx-3">Corriger mon panier</a>
-				<a class="mx-3 btn" href="commande">Confirmer le paiement</a>
+			<div class="button-panier ">
+				<a href="panier.jsp" class="btn button-corriger">Corriger mon panier</a>
+				<a class="mx-3 btn button-table " href="commande">Confirmer le paiement</a>
 			</div>
 		</div>
 

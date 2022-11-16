@@ -39,21 +39,31 @@
 <head>
 	<title>CnY - Admin</title>
 	<%@include file="inclusions/entete.jsp" %>
-	
+	<style>
+	.boutique-img img {
+		/* 			width: 150px;  */
+		height: 150px;
+		object-fit: contain;
+	}
+</style>
 </head>
 <body>
 	<%@include file="inclusions/navbar.jsp" %>
 	
-	<h1>Gestion des articles</h1>
+	<div class="container container-panier">
+	
+	<div class="titre-boutique">Gestion des articles</div>
 	<div class="container">
-		<div class="card-header my-3">Tous les produits</div>
-		<a href="ajoutProduit.jsp" class="btn btn-warning">Ajouter un produit</a>
+<!-- 		<div class="card-header my-3">Tous les produits</div> -->
+		<div class="">
+			<a href="ajoutProduit.jsp" class="btn btn-gestion button-add">Ajouter un produit</a>
+		</div>
 		<div class="row">
 		<% 
 		if (!liste.isEmpty()){ 
 			for(Produit p:liste){
 		%>
-			<div class="col-md-3 my-3">
+			<div class="col-md-3 my-3 boutique-img">
 				<div class="card" style="width: 18rem;">
 					<img src="img/img_produits/<%=p.getImage() %>" class="card-img-top" alt="...">
 					<div class="card-body">
@@ -61,8 +71,8 @@
 						<h6 class="price">Prix : <%=dcf.format(p.getPrix()) %>€</h6>
 						<h6 class="category">Catégories : <%=p.getCategorie() %></h6>
 						<h6 class="category">Stock : <%=p.getStock() %></h6>
-						<a href="modifProduit.jsp?id=<%=p.getId() %>" class="btn btn-primary">Modifier</a>
-						<a href="supprProduit.jsp?id=<%=p.getId() %>" class="btn btn-danger">Supprimer</a>
+						<a href="modifProduit.jsp?id=<%=p.getId() %>" class="btn button-modifier">Modifier</a>
+						<a href="supprProduit.jsp?id=<%=p.getId() %>" class="btn button-suppr">Supprimer</a>
 					</div>
 				</div>
 			</div>
@@ -71,6 +81,7 @@
 		} 
 		%>
 		</div>
+	</div>
 	</div>
 	
 	
