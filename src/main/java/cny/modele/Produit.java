@@ -6,19 +6,31 @@ public class Produit {
 	protected String categorie;
 	protected double prix;
 	protected String image;
+	protected int stock;
 	
 	
 	public Produit() {
 	}
 
 
-	public Produit(int id, String nom, String categorie, double prix, String image) {
+	public Produit(int id, String nom, String categorie, double prix, String image, int stock) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.categorie = categorie;
 		this.prix = prix;
 		this.image = image;
+		this.stock = stock;
+	}
+
+
+	public int getStock() {
+		return stock;
+	}
+
+
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
 
 
@@ -75,8 +87,10 @@ public class Produit {
 	@Override
 	public String toString() {
 		return "Produit [id=" + id + ", nom=" + nom + ", categorie=" + categorie + ", prix=" + prix + ", image=" + image
-				+ "]";
+				+ ", stock=" + stock + "]";
 	}
+
+
 	
 	
 }

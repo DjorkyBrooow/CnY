@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import cny.connexion.ConnexionBDD;
 import cny.modele.Panier;
 import cny.modele.Produit;
 
@@ -36,7 +37,7 @@ public class ProduitDAO {
 				ligne.setPrix(resultat.getFloat("p_prix"));
 				ligne.setCategorie(resultat.getString("p_categorie"));
 				ligne.setImage(resultat.getString("p_image"));
-				
+				ligne.setStock(resultat.getInt("p_stock"));
 				liste.add(ligne);
 			}
 		} catch (Exception e) {
@@ -62,7 +63,7 @@ public class ProduitDAO {
 						ligne.setId(resultat.getInt("p_id"));
 						ligne.setNom(resultat.getString("p_nom"));
 						ligne.setCategorie(resultat.getString("p_categorie"));
-						ligne.setPrix(resultat.getFloat("p_prix")*elem.getQuantite());
+						ligne.setPrix(resultat.getFloat("p_prix"));
 						ligne.setQuantite(elem.getQuantite());
 						articles.add(ligne);
 					}
@@ -98,16 +99,22 @@ public class ProduitDAO {
 		return somme;
 	}
 	
-	public boolean actualiserProduit(int idProduit, String image, String nom, double prix, String categorie) {
+	public boolean actualiserProduit(int idProduit, String image, String nom, double prix, String categorie, int stock) {
 		boolean retour = false;
 		try {
-			requete = "UPDATE `produit` SET  `p_image`=?, `p_nom`=?,`p_prix`=?,`p_categorie`=? WHERE `p_id`=?";
+			CommandeDAO cd = new CommandeDAO(ConnexionBDD.getConn());
+			Produit p = cd.recupererInfoProduit(idProduit);
+			int tempstock = p.getStock();
+			stock += tempstock;
+			
+			requete = "UPDATE `produit` SET  `p_image`=?, `p_nom`=?,`p_prix`=?,`p_categorie`=?, `p_stock`=? WHERE `p_id`=?";
 			pst = this.conn.prepareStatement(requete);
 			pst.setString(1, image);
 			pst.setString(2, nom);
 			pst.setDouble(3, prix);
 			pst.setString(4, categorie);
-			pst.setInt(5, idProduit);
+			pst.setInt(5, stock);
+			pst.setInt(6, idProduit);
 			pst.executeUpdate();
 			retour = true;
 			

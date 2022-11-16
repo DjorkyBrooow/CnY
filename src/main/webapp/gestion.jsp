@@ -58,8 +58,9 @@
 					<img src="img/img_produits/<%=p.getImage() %>" class="card-img-top" alt="...">
 					<div class="card-body">
 						<h5 class="card-title"><%=p.getNom() %></h5>
-						<h6 class="price">Price : <%=dcf.format(p.getPrix()) %>€</h6>
+						<h6 class="price">Prix : <%=dcf.format(p.getPrix()) %>€</h6>
 						<h6 class="category">Catégories : <%=p.getCategorie() %></h6>
+						<h6 class="category">Stock : <%=p.getStock() %></h6>
 						<a href="modifProduit.jsp?id=<%=p.getId() %>" class="btn btn-primary">Modifier</a>
 						<a href="supprProduit.jsp?id=<%=p.getId() %>" class="btn btn-danger">Supprimer</a>
 					</div>

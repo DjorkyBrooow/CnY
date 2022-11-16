@@ -69,7 +69,7 @@
 			%>
 				<tr>
 					<td><%=p.getNom() %></td>
-					<td><%=dcf.format(p.getPrix()) %>€</td>
+					<td><%=dcf.format(p.getPrix()*p.getQuantite()) %>€</td>
 					<td><%=p.getQuantite() %></td>
 				</tr>
 			<%

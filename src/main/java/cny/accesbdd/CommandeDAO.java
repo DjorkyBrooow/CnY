@@ -3,8 +3,10 @@ package cny.accesbdd;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
+import cny.connexion.ConnexionBDD;
 import cny.modele.*;
 
 public class CommandeDAO {
@@ -20,32 +22,46 @@ public class CommandeDAO {
 	public boolean enregistrerCommande(Commande commande) {
 		boolean retour = false;
 		try {
-			requete = "INSERT INTO `commande` (`fk_u_id`,`c_date`,`c_prix`) VALUES (?,?,?)";
-			pst = this.conn.prepareStatement(requete);
-			pst.setInt(1,commande.getIdUtilisateur());
-			pst.setString(2, commande.getDate());
-			pst.setDouble(3, commande.getPrix());
-			pst.executeUpdate();
-			
-			
-			requete = "SELECT `c_id` FROM `commande` WHERE (`fk_u_id`=? AND `c_date`=?)";
-			pst = this.conn.prepareStatement(requete);
-			pst.setInt(1, commande.getIdUtilisateur());
-			pst.setString(2, commande.getDate());
-			resultat = pst.executeQuery();
-			
-			if (resultat.next()) {
-				for (Panier p:commande.getListeArticles()) {
-					requete = "INSERT INTO `article_panier` (`fk_p_id`,`fk_c_id`,`ap_quantite`) VALUES (?,?,?)";
-					pst = this.conn.prepareStatement(requete);
-					pst.setInt(1,p.getId());
-					pst.setInt(2,resultat.getInt("c_id"));
-					pst.setInt(3, p.getQuantite());
-					pst.executeUpdate();
+			for (Panier p:commande.getListeArticles()) {
+				if(!verifStock(p,commande)) {
+					commande.getListeArticles().remove(p);
 				}
-				retour = true;
 			}
 			
+			if (commande.getListeArticles().size()==0) {
+				retour = false;
+			} else {
+				double prix= 0;
+				for (Panier p:commande.getListeArticles()) {
+					prix+=p.getPrix()*p.getQuantite();
+				}
+				requete = "INSERT INTO `commande` (`fk_u_id`,`c_date`,`c_prix`) VALUES (?,?,?)";
+				pst = this.conn.prepareStatement(requete);
+				pst.setInt(1,commande.getIdUtilisateur());
+				pst.setString(2, commande.getDate());
+				pst.setDouble(3, prix);
+				pst.executeUpdate();
+				
+				
+				requete = "SELECT `c_id` FROM `commande` WHERE (`fk_u_id`=? AND `c_date`=?)";
+				pst = this.conn.prepareStatement(requete);
+				pst.setInt(1, commande.getIdUtilisateur());
+				pst.setString(2, commande.getDate());
+				resultat = pst.executeQuery();
+				
+				if (resultat.next()) {
+					for (Panier p:commande.getListeArticles()) {
+						requete = "INSERT INTO `article_panier` (`fk_p_id`,`fk_c_id`,`ap_quantite`) VALUES (?,?,?)";
+						pst = this.conn.prepareStatement(requete);
+						pst.setInt(1,p.getId());
+						pst.setInt(2,resultat.getInt("c_id"));
+						pst.setInt(3, p.getQuantite());
+						pst.executeUpdate();
+						ajusterStock(p);
+					}
+					retour = true;
+				}
+			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -110,10 +126,12 @@ public class CommandeDAO {
 			pst.setInt(1, id);
 			ResultSet res = pst.executeQuery();
 			if (res.next()) {
+				prod.setId(id);
 				prod.setNom(res.getString("p_nom"));
 				prod.setCategorie(res.getString("p_categorie"));
 				prod.setImage(res.getString("p_image"));
 				prod.setPrix(res.getDouble("p_prix"));
+				prod.setStock(res.getInt("p_stock"));
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -146,6 +164,44 @@ public class CommandeDAO {
 		}
 		
 		return listePanier;
+	}
+	
+	
+	public boolean verifStock(Panier panier, Commande commande) {
+		boolean retour = false;
+		try {
+			CommandeDAO cd = new CommandeDAO(ConnexionBDD.getConn());
+			Produit p = cd.recupererInfoProduit(panier.getId());
+			if (panier.getQuantite() <= p.getStock()) {
+				retour = true;
+			} else {
+				retour = false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return retour;
+	}
+	
+	public boolean ajusterStock(Panier panier) {
+		boolean retour = false;
+
+		CommandeDAO cd;
+		try {
+			cd = new CommandeDAO(ConnexionBDD.getConn());
+			Produit p = cd.recupererInfoProduit(panier.getId());
+
+			int stock = p.getStock()-panier.getQuantite();
+			requete = "UPDATE `produit` SET `p_stock`=? WHERE `p_id`=?";
+			pst = this.conn.prepareStatement(requete);
+			pst.setInt(1, stock);
+			pst.setInt(2, panier.getId());
+			pst.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return retour;
 	}
 	
 }

@@ -69,6 +69,7 @@
 					<th scope="col">Nom</th>
 					<th scope="col">Prix</th>
 					<th scope="col">Catégories</th>
+					<th scope="col">Stock</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -77,6 +78,7 @@
 					<td><%=p.getNom() %></td>
 					<td><%=p.getPrix() %> €</td>
 					<td><%=p.getCategorie() %></td>
+					<td><%=p.getStock() %></td>
 				</tr>
 			</tbody>
 		</table>
@@ -92,6 +94,8 @@
 			<input class="form-group" type="text" placeholder="Prix de l'article" name="prix">
 			<label for="categorie">Catégories</label>
 			<input class="form-group" type="text" placeholder="Catégories de l'article" name="categorie">
+			<label for="stock">Stock</label>
+			<input class="form-group" type="number" placeholder="Stock à ajouter" name="stock" min="0">
 			<button class="btn btn-primary" type="submit">Valider</button>
 		</form>
 	</div>

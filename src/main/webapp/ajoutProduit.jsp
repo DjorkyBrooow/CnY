@@ -43,14 +43,26 @@
 	
 	<div class="container">
 		<form action="" method="post">
+		<div>
 			<label for="image">Image</label>
 			<input class="form-group" type="text" placeholder="Nom du fichier image" name="image">
+		</div>	
+		<div>
 			<label for="nom">Nom</label>
 			<input class="form-group" type="text" placeholder="Nom de l'article" name="nom">
+		</div>
+		<div>
 			<label for="prix">Prix</label>
 			<input class="form-group" type="text" placeholder="Prix de l'article" name="prix">
+		</div>
+		<div>
 			<label for="categorie">Catégories</label>
 			<input class="form-group" type="text" placeholder="Catégories de l'article" name="categorie">
+		</div>
+		<div>
+			<label for="stock">Stock initial</label>
+			<input class="form-group" type="number" placeholder="Stock initial" name="stock">
+		</div>
 			<button class="btn btn-primary" type="submit">Valider</button>
 		</form>
 	</div>

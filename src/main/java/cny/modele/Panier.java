@@ -19,7 +19,7 @@ public class Panier extends Produit{
 	@Override
 	public String toString() {
 		return "Produit [id=" + id + ", nom=" + nom + ", categorie=" + categorie + ", prix=" + prix + ", image=" + image
-				+ ", quantite="+quantite+"]";
+				+ ", quantite="+ quantite + "]";
 	}
 	
 	

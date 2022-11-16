@@ -43,12 +43,13 @@ CREATE TABLE `produit` (
   `p_categorie` varchar(255) NOT NULL,
   `p_prix` double NOT NULL,
   `p_image` varchar(255) NOT NULL,
+  `p_stock` int UNSIGNED NOT NULL,
   PRIMARY KEY (`p_id`)
 );
 
-INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`) VALUES ('t-shirt blanc','t-shirt haut',15,'tshirt_blanc.png'),('polo bleue','polo haut',30,'polo_bleue.png'),('chemise noire','chemise haut',35,'chemise_noire.png'),('jean bleu','pantalon jean bas',35,'jean_bleu.png'),('jupe','jupe bas femme',30,'jupe.png'),('sweat en laine','sweat haut',40,'sweat_laine.png'),('robe','robe tenue',60,'robe.png'),('sweat','sweat pull haut',30,'sweat.png');
-INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`) VALUES ('bermuda marron','bermuda bas',13,'bermuda_marron.png'),('doudoune noire','doudoune haut',50,'doudoune_noire.png'),('doudoune orange','doudoune haut',45,'doudoune_orange.png'),('jogging','jogging bas',25,'jogging.png'),('polo violet','polo haut',30,'polo_violet.png'),('t-shirt rose','t-shirt haut',15,'tshirt_rose.png'),('t-shirt sport','t-shirt haut',15,'tshirt_sport.png');
-INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`) VALUES ('veste bleue','veste haut',45,'veste_bleue.png'),('veste grise','veste haut',40,'veste_grise.png'),('veste à capuche','veste haut',45,'veste_capuche.png'),('veste noire','veste haut',40,'veste_noire.png'),('veste de sport','veste haut',40,'veste_sport.png');
+INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`,`p_stock`) VALUES ('t-shirt blanc','t-shirt haut',15,'tshirt_blanc.png',5),('polo bleu','polo haut',30,'polo_bleue.png',5),('chemise noire','chemise haut',35,'chemise_noire.png',5),('jean bleu','pantalon jean bas',35,'jean_bleu.png',9),('jupe','jupe bas femme',30,'jupe.png',2),('sweat en laine','sweat haut',40,'sweat_laine.png',8),('robe','robe tenue',60,'robe.png',20),('sweat','sweat pull haut',30,'sweat.png',10);
+INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`,`p_stock`) VALUES ('bermuda marron','bermuda bas',13,'bermuda_marron.png',4),('doudoune noire','doudoune haut',50,'doudoune_noire.png',8),('doudoune orange','doudoune haut',45,'doudoune_orange.png',6),('jogging','jogging bas',25,'jogging.png',8),('polo violet','polo haut',30,'polo_violet.png',5),('t-shirt rose','t-shirt haut',15,'tshirt_rose.png',2),('t-shirt sport','t-shirt haut',15,'tshirt_sport.png',5);
+INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`,`p_stock`) VALUES ('veste bleue','veste haut',45,'veste_bleue.png',7),('veste grise','veste haut',40,'veste_grise.png',4),('veste Ã  capuche','veste haut',45,'veste_capuche.png',3),('veste noire','veste haut',40,'veste_noire.png',9),('veste de sport','veste haut',40,'veste_sport.png',6);
 
 DROP TABLE IF EXISTS `article_panier`;
 CREATE TABLE `article_panier` (

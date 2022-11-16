@@ -64,7 +64,7 @@ List<Produit> liste = pd.tousLesProduits();
 						<h6 class="category">
 							Catégories :
 							<%=p.getCategorie()%></h6>
-						<a href="panier?id=<%=p.getId()%>" class="button-boutique btn btn-primary">Ajouter
+						<a href="panier?id=<%=p.getId()%>" class="button-boutique btn btn-primary <%if (p.getStock()==0){out.print("disabled");} %>">Ajouter
 							au Panier</a>
 					</div>
 				</div>

@@ -47,6 +47,7 @@
 	<%@include file="inclusions/navbar.jsp" %>
 	
 	<div class="container">
+		<a class="btn btn-primary" href="historique.jsp">Retour</a>
 		<div class="d-flex py-3">
 			<h3>Detail de la commande du <%=date %></h3>
 		</div>
