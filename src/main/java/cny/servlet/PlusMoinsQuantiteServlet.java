@@ -36,6 +36,10 @@ public class PlusMoinsQuantiteServlet extends HttpServlet {
 									quantite++;
 								}
 								p.setQuantite(quantite);
+								if (!cd.verifStock(p)) {
+									quantite--;
+								}
+								p.setQuantite(quantite);
 								response.sendRedirect("panier.jsp");
 							}
 						}
