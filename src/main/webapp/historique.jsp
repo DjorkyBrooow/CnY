@@ -67,6 +67,7 @@ if (listePanier != null) {
 		</table>
 
 	</div>
+	<a href="monCompte.jsp"><h3>Mes informations personnelles</h3></a>
 
 	<%@include file="inclusions/pied.jsp"%>
 
