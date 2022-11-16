@@ -65,6 +65,7 @@ public class ProduitDAO {
 						ligne.setCategorie(resultat.getString("p_categorie"));
 						ligne.setPrix(resultat.getFloat("p_prix"));
 						ligne.setQuantite(elem.getQuantite());
+						ligne.setStock(resultat.getInt("p_stock"));
 						articles.add(ligne);
 					}
 				}

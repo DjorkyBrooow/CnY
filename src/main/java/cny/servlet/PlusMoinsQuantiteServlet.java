@@ -2,8 +2,11 @@ package cny.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
+import cny.accesbdd.*;
+import cny.connexion.ConnexionBDD;
 import cny.modele.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -22,30 +25,36 @@ public class PlusMoinsQuantiteServlet extends HttpServlet {
 			int id = Integer.parseInt(request.getParameter("id"));
 			
 			ArrayList<Panier> listePanier = (ArrayList<Panier>) request.getSession().getAttribute("liste-panier");
-			
-			if(action != null && id >=1) {
-				if(action.equals("augmenter")) {
-					for (Panier p:listePanier) {
-						if(p.getId()==id) {
-							int quantite = p.getQuantite();
-							quantite++;
-							p.setQuantite(quantite);
-							response.sendRedirect("panier.jsp");
+			try {
+				CommandeDAO cd = new CommandeDAO(ConnexionBDD.getConn());
+				if(action != null && id >=1) {
+					if(action.equals("augmenter")) {
+						for (Panier p:listePanier) {
+							if(p.getId()==id) {
+								int quantite = p.getQuantite();
+								if (cd.verifStock(p)){
+									quantite++;
+								}
+								p.setQuantite(quantite);
+								response.sendRedirect("panier.jsp");
+							}
 						}
-					}
-				} if(action.equals("diminuer")) {
-					for (Panier p:listePanier) {
-						if(p.getId()==id && p.getQuantite()>1) {
-							int quantite = p.getQuantite();
-							quantite--;
-							p.setQuantite(quantite);
-							break;
+					} if(action.equals("diminuer")) {
+						for (Panier p:listePanier) {
+							if(p.getId()==id && p.getQuantite()>1) {
+								int quantite = p.getQuantite();
+								quantite--;
+								p.setQuantite(quantite);
+								break;
+							}
 						}
-					}
+						response.sendRedirect("panier.jsp");
+					} 
+				} else {
 					response.sendRedirect("panier.jsp");
-				} 
-			} else {
-				response.sendRedirect("panier.jsp");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 			

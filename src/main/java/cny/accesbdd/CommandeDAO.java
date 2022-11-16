@@ -23,7 +23,7 @@ public class CommandeDAO {
 		boolean retour = false;
 		try {
 			for (Panier p:commande.getListeArticles()) {
-				if(!verifStock(p,commande)) {
+				if(!verifStock(p)) {
 					commande.getListeArticles().remove(p);
 				}
 			}
@@ -167,7 +167,7 @@ public class CommandeDAO {
 	}
 	
 	
-	public boolean verifStock(Panier panier, Commande commande) {
+	public boolean verifStock(Panier panier) {
 		boolean retour = false;
 		try {
 			CommandeDAO cd = new CommandeDAO(ConnexionBDD.getConn());
@@ -182,6 +182,8 @@ public class CommandeDAO {
 		}
 		return retour;
 	}
+	
+	
 	
 	public boolean ajusterStock(Panier panier) {
 		boolean retour = false;
