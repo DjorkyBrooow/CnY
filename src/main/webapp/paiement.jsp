@@ -14,6 +14,7 @@ request.setAttribute("dcf", dcf);
 
 Utilisateur auth = (Utilisateur) request.getSession().getAttribute("auth");
 UtilisateurDAO uDAO = new UtilisateurDAO(ConnexionBDD.getConn());
+	CommandeDAO cd = new CommandeDAO(ConnexionBDD.getConn());
 
 List<Panier> panier = null;
 
@@ -48,7 +49,6 @@ if (auth == null) {
 	<%@include file="inclusions/navbar.jsp"%>
 
 	<div class="container container-panier">
-
 		<div class="titre-boutique">Confirmation de votre panier</div>
 
 		<table class="table table-panier">
@@ -63,6 +63,7 @@ if (auth == null) {
 				<%
 				if (listePanier != null) {
 					for (Panier p : panier) {
+                        if (cd.verifStock(p)){
 				%>
 				<tr>
 					<td><%=p.getNom()%></td>
@@ -70,15 +71,19 @@ if (auth == null) {
 					<td><%=p.getQuantite()%></td>
 				</tr>
 				<%
-				}
+                        } else { %>
+                            <p>Nombre d'exemplaires de <%=p.getNom() %> restants : <%= p.getStock() %></p>
+                <%      }
+				    }
 				}
 				%>
 			</tbody>
 		</table>
 
 		<div class="container-end-panier">
-			<h3>Total price : ${(total>0)?dcf.format(total):0 }€</h3>
+			<h3>Prix total : ${(total>0)?dcf.format(total):0 }€</h3>
 			<div class="button-panier button-paiement">
+				<a href="panier.jsp" class="btn btn-danger mx-3">Corriger mon panier</a>
 				<a class="mx-3 btn" href="commande">Confirmer le paiement</a>
 			</div>
 		</div>
