@@ -109,4 +109,14 @@
     <servlet-name>ModifierUtilisateurServlet</servlet-name>
     <url-pattern>/modifierutilisateur</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RechercheProduitServlet</display-name>
+    <servlet-name>RechercheProduitServlet</servlet-name>
+    <servlet-class>cny.servlet.RechercheProduitServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RechercheProduitServlet</servlet-name>
+    <url-pattern>/rechercheproduit</url-pattern>
+  </servlet-mapping>
 </web-app>
