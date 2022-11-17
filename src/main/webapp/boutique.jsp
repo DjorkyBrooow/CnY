@@ -24,6 +24,7 @@ if (listePanier != null) {
 
 ProduitDAO pd = new ProduitDAO(ConnexionBDD.getConn());
 List<Produit> liste = pd.tousLesProduits();
+
 %>
 <!DOCTYPE html>
 <html>
@@ -44,10 +45,29 @@ List<Produit> liste = pd.tousLesProduits();
 
 
 	<%@include file="inclusions/navbar.jsp"%>
+	
+	
+	<form action="rechercheproduit" method="get">
+			<label for='recherche'> Recherche :</label>
+			<input id ='recherche' name='recherche' type='text' autofocus placeholder ="Search.." />
+			<input type ='submit' value = 'recherche'/>
+		</form>
+		
+<%
+ProduitDAO r = new ProduitDAO(ConnexionBDD.getConn());
+List<Produit> recherche = null;
+if(session.getAttribute("recherche") != null){
+	 recherche = (ArrayList<Produit>) session.getAttribute("recherche");
+}
 
+
+%>
+		
 	<div class="container boutique">
 		<div class="card-header my-3 titre-boutique">Tous les produits</div>
 		<div class="row">
+		
+		<% if (recherche==null || recherche.isEmpty()) {%>
 			<%
 			if (!liste.isEmpty()) {
 				for (Produit p : liste) {
@@ -61,18 +81,37 @@ List<Produit> liste = pd.tousLesProduits();
 							Price :
 							<%=dcf.format(p.getPrix())%>€
 						</h6>
-						<h6 class="category">
-							Catégories :
-							<%=p.getCategorie()%></h6>
-						<a href="panier?id=<%=p.getId()%>" class="button-boutique btn button-nostock <%if (p.getStock()==0){out.print("disabled");} %>">Ajouter
+						<a href="panier?id=<%=p.getId()%>" class="button-boutique btn btn-primary <%if (p.getStock()==0){out.print("disabled");} %>">Ajouter
 							au Panier</a>
 					</div>
 				</div>
 			</div>
 			<%
-			}
+				}
 			}
 			%>
+			<%
+			}else {
+				for (Produit p : recherche) {
+		%>
+			<div class="col-md-3 my-3 boutique-img">
+				<div class="card" style="width: 18rem;">
+					<img src="img/img_produits/<%=p.getImage()%>" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title"><%=p.getNom()%></h5>
+						<h6 class="price">
+							Price :
+							<%=dcf.format(p.getPrix())%>€
+						</h6>
+						<a href="panier?id=<%=p.getId()%>" class="button-boutique btn btn-primary <%if (p.getStock()==0){out.print("disabled");} %>">Ajouter
+							au Panier</a>
+					</div>
+				</div>
+			</div>
+			<%}
+			}
+			%>
+			
 		</div>
 	</div>
 
