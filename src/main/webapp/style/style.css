@@ -481,7 +481,49 @@ body {
 	width: 100%;
 	
 }
+
 /* ---------- MODIFPRODUIT END ---------- */
+
+/* ---------- AJOUTERPRODUIT BEGIN ---------- */
+
+.form-ajouter{
+	width: 40%;
+    margin: 2% 30% 2% 30%;
+    padding: 0;
+}
+.form-ajouter label{
+	margin-bottom: 1%;
+}
+.form-ajouter input{
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 3%;
+}
+.img-input{
+	padding: 0 !important;
+    border: none !important;
+}
+.form-ajouter input[type=file]::file-selector-button {
+
+  margin-right: 20px;
+  border: none;
+  background: #383638;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+.form-ajouter input[type=file]::file-selector-button:hover {
+  background: #000000;
+}
+
+/* ---------- AJOUTERPRODUIT END ---------- */
 
 /* ---------- SUPPRPRODUIT BEGIN ---------- */
 

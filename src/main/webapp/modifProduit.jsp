@@ -86,11 +86,7 @@ img {
 				</tr>
 			</tbody>
 		</table>
-	</div>
-
-
-
-	<div>
+		
 		<form class="form-modif" action="modifierproduit?id=<%=idProduit%>"
 			method="post">
 			<div class="flex-modif">
@@ -128,6 +124,7 @@ img {
 
 
 		</form>
+		
 	</div>
 
 

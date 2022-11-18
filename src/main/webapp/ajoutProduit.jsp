@@ -41,11 +41,20 @@
 	<%@include file="inclusions/navbar.jsp" %>
 
 	
+	<div class="container container-panier">
+	
+			<a class="btn button-suppr titre-tableau-modif" href="gestion.jsp">Retour</a>
+	
+	
+	<div class="titre-boutique">Ajout d'un produit</div>
+	
 	<div class="container">
-		<form action="ajouterproduit" method="post">
+	
+	
+		<form class="form-ajouter" action="ajouterproduit" method="post">
 		<div>
 			<label for="image">Image</label>
-			<input class="form-group" type="file" placeholder="Nom du fichier image" name="image">
+			<input class="form-group img-input" type="file" placeholder="Nom du fichier image" name="image">
 		</div>	
 		<div>
 			<label for="nom">Nom</label>
@@ -63,8 +72,13 @@
 			<label for="stock">Stock initial</label>
 			<input class="form-group" type="number" placeholder="Stock initial" name="stock">
 		</div>
-			<button class="btn btn-primary" type="submit">Valider</button>
+		<div>
+			<button class="btn button-add" type="submit">Valider</button>
+		</div>
 		</form>
+		
+		
+	</div>
 	</div>
 	
 
