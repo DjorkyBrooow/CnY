@@ -154,10 +154,41 @@ body {
 .card-body {
 	text-align: center;
 }
-
-.button-nostock{
-	
+.search-form #recherche{
+  	width: 25%;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
+
+#search-logo{
+	background-color: #9b8a5e;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #9b8a5e;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#search-logo:hover{
+	 background-color: #766947;
+    border: 1px solid #766947;
+}
+
+#search-annule{
+	background-color: #dc3545;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#search-annule:hover{
+	 background-color: #bb2d3b;
+    border: 1px solid #bb2d3b;
+}
+
 /* ---------- BOUTIQUE END ---------- */
 
 /* ---------- PANIER BEGIN ---------- */
