@@ -165,26 +165,6 @@ public class ProduitDAO {
 		return retour;
 	}
 	
-		public boolean ajouterProduit(String image, String nom, double prix, String categorie, int stock) {
-		boolean retour = false;
-		try {
-
-			requete = "INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`,`p_stock`) VALUES (?, ?, ?, ?, ?)";
-			pst = this.conn.prepareStatement(requete);
-			pst.setString(1, nom);
-			pst.setString(2, categorie);
-			pst.setDouble(3, prix);
-			pst.setString(4, image);
-			pst.setInt(5, stock);
-			pst.executeUpdate();
-			retour = true;
-
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-
-		return retour;
-	}
 
 	public List<Produit> listeRecherche(String recherche) {
 		List<Produit> listeR = new ArrayList<>();
