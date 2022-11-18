@@ -27,7 +27,6 @@ public class SupprimerProduitServlet extends HttpServlet {
 			int idProduit = Integer.parseInt(request.getParameter("id"));
 			try {
 				ProduitDAO pd = new ProduitDAO(ConnexionBDD.getConn());
-				
 				String image = pd.recupererImage(idProduit);
 				if(image != null) {
 					try{
@@ -42,8 +41,8 @@ public class SupprimerProduitServlet extends HttpServlet {
 						 e.printStackTrace();
 						 }
 				}
-				
 				boolean resultat = pd.supprimerProduit(idProduit);
+				
 				if (resultat) {
 					System.out.print("suppression réussie");
 				} else {

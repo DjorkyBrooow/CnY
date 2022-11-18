@@ -46,7 +46,7 @@ List<Utilisateur> liste = uDAO.tousLesUtilisateurs();
 <body>
 	<%@include file="inclusions/navbar.jsp"%>
 	<div class="container container-panier">
-		
+
 		<div class="titre-onglet">
 			<div class="onglet onglet-article2">
 				<a href="gestion.jsp"><span class="titre-boutique">Gestion des articles</span></a>
@@ -55,7 +55,6 @@ List<Utilisateur> liste = uDAO.tousLesUtilisateurs();
 				<span class="titre-boutique">Gestion des utilisateurs</span>
 			</div>
 		</div>
-		
 		<div class="container">
 			<div class="row">
 				<table class="table table-gestionU table-panier">

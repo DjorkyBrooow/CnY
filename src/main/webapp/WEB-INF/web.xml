@@ -125,12 +125,12 @@
 	</servlet-mapping>
 	<servlet>
 		<description></description>
-		<display-name>changerRoleServlet</display-name>
-		<servlet-name>changerRoleServlet</servlet-name>
-		<servlet-class>cny.servlet.changerRoleServlet</servlet-class>
+		<display-name>ChangerRoleServlet</display-name>
+		<servlet-name>ChangerRoleServlet</servlet-name>
+		<servlet-class>cny.servlet.ChangerRoleServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>changerRoleServlet</servlet-name>
+		<servlet-name>ChangerRoleServlet</servlet-name>
 		<url-pattern>/changerrole</url-pattern>
 	</servlet-mapping>
 	<servlet>

@@ -31,7 +31,8 @@ body {
 .log a {
 	color: white !important;
 }
-.nom-navbar{
+
+.nom-navbar {
 	color: #171617;
 }
 /* ---------- NAVBAR END ---------- */
@@ -97,7 +98,6 @@ body {
 	border: 5px solid #171617;
 }
 
-
 #fond-logo-cny {
 	width: 40%;
 	filter: opacity(0.2);
@@ -154,95 +154,100 @@ body {
 .card-body {
 	text-align: center;
 }
-.search-form #recherche{
-  	width: 25%;
-    padding: 10px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+
+.search-form #recherche {
+	width: 25%;
+	padding: 10px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
-#search-logo{
+#search-logo {
 	background-color: #9b8a5e;
-    padding: 10px;
-    display: inline-block;
-    border: 1px solid #9b8a5e;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-#search-logo:hover{
-	 background-color: #766947;
-    border: 1px solid #766947;
+	padding: 10px;
+	display: inline-block;
+	border: 1px solid #9b8a5e;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
-#search-annule{
-	background-color: #dc3545;
-    padding: 10px;
-    display: inline-block;
-    border: 1px solid #dc3545;
-    border-radius: 4px;
-    box-sizing: border-box;
+#search-logo:hover {
+	background-color: #766947;
+	border: 1px solid #766947;
 }
-#search-annule:hover{
-	 background-color: #bb2d3b;
-    border: 1px solid #bb2d3b;
+
+#search-annule {
+	background-color: #dc3545;
+	padding: 10px;
+	display: inline-block;
+	border: 1px solid #dc3545;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#search-annule:hover {
+	background-color: #bb2d3b;
+	border: 1px solid #bb2d3b;
 }
 
 .btn.disabled, .btn:disabled, fieldset:disabled .btn {
-  color: white;
-    pointer-events: none;
-    background-color: #625c62;
-    border-color: #625c62;
-    opacity: var(--bs-btn-disabled-opacity);
+	color: white;
+	pointer-events: none;
+	background-color: #625c62;
+	border-color: #625c62;
+	opacity: var(- -bs-btn-disabled-opacity);
 }
 
 /* ---------- BOUTIQUE END ---------- */
 
 /* ---------- PANIER BEGIN ---------- */
-
-.container-panier{
+.container-panier {
 	position: relative;
 	min-height: 60vh;
-	margin-top:2%;
+	margin-top: 2%;
 }
-.table-panier{
-	margin:2% 5% 2% 5%;
+
+.table-panier {
+	margin: 2% 5% 2% 5%;
 	width: 90%;
 	vertical-align: middle;
 }
 
 .table-panier tbody, td, tfoot, th, tr {
-    border-color: #9b8a5e;
-    border-style: solid;
-    border-width: 0;
+	border-color: #9b8a5e;
+	border-style: solid;
+	border-width: 0;
 }
-.table-panier thead{
+
+.table-panier thead {
 	background-color: #9b8a5e;
 }
-.container-end-panier{
+
+.container-end-panier {
 	text-align: center;
 }
 
 .button-panier a {
-/* 	width: 15%; */
-    
-    border-radius: 10px;
-    transition: 0.5s;
-    margin: 1% 0% 0% 0%;
-    font-size: 1.35em;
+	/* 	width: 15%; */
+	border-radius: 10px;
+	transition: 0.5s;
+	margin: 1% 0% 0% 0%;
+	font-size: 1.35em;
 }
 
 .button-panier a:hover {
 	
 }
 
-.button-table{
+.button-table {
 	color: white;
-    background-color: #171617;
-    border: 5px solid #171617;
+	background-color: #171617;
+	border: 5px solid #171617;
 }
-.button-table:hover{
+
+.button-table:hover {
 	color: black !important;
 	background-color: #9b8a5e;
 	border: 5px solid #171617;
@@ -262,35 +267,33 @@ body {
 /* 	background-color: #9b8a5e; */
 /* 	border: 5px solid #171617; */
 /* } */
-
-.button-corriger{
+.button-corriger {
 	background-color: #dc3545;
-	border:5px solid #dc3545;
-		color: white !important;
-	
+	border: 5px solid #dc3545;
+	color: white !important;
 }
-.button-corriger:hover{
+
+.button-corriger:hover {
 	background-color: #bb2d3b;
-    border-color: #bb2d3b;
+	border-color: #bb2d3b;
 }
 
 /* ---------- PAIEMENT END ---------- */
 
 /* ---------- HISTORIQUE BEGIN ---------- */
-
-.button-historique{
+.button-historique {
 	text-align: right;
 }
 
-.button-historique a{
-	
+.button-historique a {
 	color: white;
-    transition: 0.5s;
-    background-color: #171617;
-    border: 5px solid #171617;
-    border-radius: 10px;
-    transition: 0.5s;
+	transition: 0.5s;
+	background-color: #171617;
+	border: 5px solid #171617;
+	border-radius: 10px;
+	transition: 0.5s;
 }
+
 .button-historique a:hover {
 	color: black !important;
 	background-color: #9b8a5e;
@@ -300,16 +303,16 @@ body {
 /* ---------- HISTORIQUE END ---------- */
 
 /* ---------- DETAIL BEGIN ---------- */
-
-.button-detail a{
+.button-detail a {
 	margin-left: 5%;
 	color: white;
-    transition: 0.5s;
-    background-color: #171617;
-    border: 5px solid #171617;
-    border-radius: 10px;
-    transition: 0.5s;
+	transition: 0.5s;
+	background-color: #171617;
+	border: 5px solid #171617;
+	border-radius: 10px;
+	transition: 0.5s;
 }
+
 .button-detail a:hover {
 	color: black !important;
 	background-color: #9b8a5e;
@@ -319,60 +322,65 @@ body {
 /* ---------- DETAIL END ---------- */
 
 /* ---------- GESTION BEGIN ---------- */
-
-.button-suppr{
+.button-suppr {
 	color: white !important;
 	background-color: #dc3545;
 	border: 5px solid #dc3545;
-	
 }
-.button-suppr:hover{
+
+.button-suppr:hover {
 	color: white;
 	background-color: #bb2d3b;
 	border: 5px solid #bb2d3b;
 }
 
-.button-add{
+.button-add {
 	color: white !important;
 	background-color: #23A229;
 	border: 5px solid #23A229;
-	
 }
-.button-add:hover{
+
+.button-add:hover {
 	color: white;
 	background-color: #208C25;
 	border: 5px solid #208C25;
 }
-.button-modifier{
-	color: white ;
+
+.button-modifier {
+	color: white;
 	transition: 0.5s;
 	background-color: #171617;
 	border: 5px solid #171617;
-	
 }
-.button-modifier:hover{
+
+.button-modifier:hover {
 	color: black !important;
 	border: 5px solid #171617;
 	background-color: #9b8a5e;
 }
-.titre-onglet{
+
+.titre-onglet {
 	display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0% 0% 2% 0%;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0% 0% 2% 0%;
 }
-.onglet{
+
+.onglet {
 	width: 100%;
 	text-align: center;
 	margin: 0% 1%;
 }
-.onglet-article{
-	border-bottom:5px solid
+
+.onglet-article {
+	border-bottom: 5px solid
 }
-.onglet-utilisateur{
+
+.onglet-utilisateur {
 	border-bottom: 5px solid #9b8a5e;
 }
-.onglet-utilisateur a{
+
+.onglet-utilisateur a {
 	color: #9b8a5e;
 	text-decoration: none;
 }
@@ -380,62 +388,64 @@ body {
 /* ---------- GESTION END ---------- */
 
 /* ---------- GESTIONU BEGIN ---------- */
-
-.onglet-article2{
-	border-bottom: 5px solid #9b8a5e;	
+.onglet-article2 {
+	border-bottom: 5px solid #9b8a5e;
 }
-.onglet-article2 a{
+
+.onglet-article2 a {
 	color: #9b8a5e;
 	text-decoration: none;
 }
 
-.onglet-utilisateur2{
-	border-bottom:5px solid
-}
-.table-gestionU{
-	width: 100% !important;
-	margin: 2% 1% 2% 1%;
-    vertical-align: middle;
+.onglet-utilisateur2 {
+	border-bottom: 5px solid
 }
 
+.table-gestionU {
+	width: 100% !important;
+	margin: 2% 1% 2% 1%;
+	vertical-align: middle;
+}
 
 /* ---------- GESTIONU END ---------- */
 
 /* ---------- MONCOMPTE BEGIN ---------- */
-
-.table-pm{
+.table-pm {
 	margin: 2% 30% 2% 30%;
-    width: 40%;
-}
-.infos{
 	width: 40%;
-    margin: 2% 30% 2% 30%;
-    padding: 0;
 }
-.infos input{
-    width: 100%;
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 3%;
+
+.infos {
+	width: 40%;
+	margin: 2% 30% 2% 30%;
+	padding: 0;
 }
-.titre-compte{
+
+.infos input {
+	width: 100%;
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-bottom: 3%;
+}
+
+.titre-compte {
 	margin-bottom: 3%;
 	font-size: 1.5em;
 }
 
 .button-compte {
 	width: 100%;
-    color: white;
-    transition: 0.5s;
-    background-color: #23A229;
-    border: 5px solid #23A229;
-    border-radius: 10px;
-    transition: 0.5s;
-    padding: 2%;
-    margin: 2% 0% 0% 0%;
+	color: white;
+	transition: 0.5s;
+	background-color: #23A229;
+	border: 5px solid #23A229;
+	border-radius: 10px;
+	transition: 0.5s;
+	padding: 2%;
+	margin: 2% 0% 0% 0%;
 }
 
 .button-compte:hover {
@@ -443,111 +453,115 @@ body {
 	background-color: #208C25;
 	border: 5px solid #208C25;
 }
-.divcompte{
-	text-align:center;
+
+.divcompte {
+	text-align: center;
 }
 
 /* ---------- MONCOMPTE END ---------- */
 
 /* ---------- MODIFPRODUIT BEGIN ---------- */
-
-.titre-tableau-modif{
+.titre-tableau-modif {
 	margin-left: 5%;
 }
 
-.form-modif{
+.form-modif {
 	margin: 0% 5% 0% 5%;
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
-.form-modif input{
-    width: 100%;
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 3%;
+
+.form-modif input {
+	width: 100%;
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-bottom: 3%;
 }
-.form-modif label{
+
+.form-modif label {
 	margin-bottom: 2%;
 }
 
-.flex-modif{
+.flex-modif {
 	width: 40%;
 	margin: 0% 5%;
 }
-.button-modif{
+
+.button-modif {
 	width: 100%;
-	
 }
 
 /* ---------- MODIFPRODUIT END ---------- */
 
 /* ---------- AJOUTERPRODUIT BEGIN ---------- */
-
-.form-ajouter{
+.form-ajouter {
 	width: 40%;
-    margin: 2% 30% 2% 30%;
-    padding: 0;
+	margin: 2% 30% 2% 30%;
+	padding: 0;
 }
-.form-ajouter label{
+
+.form-ajouter label {
 	margin-bottom: 1%;
 }
-.form-ajouter input{
-    width: 100%;
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 3%;
-}
-.img-input{
-	padding: 0 !important;
-    border: none !important;
-}
-.form-ajouter input[type=file]::file-selector-button {
 
-  margin-right: 20px;
-  border: none;
-  background: #383638;
-  padding: 10px 20px;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-  transition: background .2s ease-in-out;
+.form-ajouter input {
+	width: 100%;
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-bottom: 3%;
+}
+
+.img-input {
+	padding: 0 !important;
+	border: none !important;
+}
+
+.form-ajouter input[type=file]::file-selector-button {
+	margin-right: 20px;
+	border: none;
+	background: #383638;
+	padding: 10px 20px;
+	border-radius: 10px;
+	color: #fff;
+	cursor: pointer;
+	transition: background .2s ease-in-out;
 }
 
 .form-ajouter input[type=file]::file-selector-button:hover {
-  background: #000000;
+	background: #000000;
 }
 
 /* ---------- AJOUTERPRODUIT END ---------- */
 
 /* ---------- SUPPRPRODUIT BEGIN ---------- */
-
-.center-button-suppr{
+.center-button-suppr {
 	text-align: center;
 }
 
 /* ---------- SUPPRPRODUIT END ---------- */
 
 /* ---------- LOGIN BEGIN ---------- */
+.container-log input {
+	margin: 0% 5% 0% 5%;
+	width: 80%;
+	padding: 12px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
 
-.container-log input{
-  	margin: 0% 5% 0% 5%;
-    width: 80%;
-    padding: 12px 20px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+.container-log label {
+	margin: 2% 0% 2% 0%;
+	font-size: 1.2em;
 }
-.container-log label{
-	   margin: 2% 0% 2% 0%;
-    font-size: 1.2em;
-}
+
 .container-log {
 	display: flex;
 	flex-direction: row;
@@ -557,12 +571,13 @@ body {
 	text-align: center;
 }
 
-
 .container-form {
 	width: 30%;
 	border-radius: 5%;
 	background-color: #9b8a5e;
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px
+		-12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px
+		12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .container-connexion {
@@ -573,22 +588,22 @@ body {
 	margin: 0% 18% 0% 2%;
 }
 
-.titre-form{
+.titre-form {
 	margin: 3% 0% 0% 0%;
-    font-weight: bold;
-    font-size: 2.2em;
+	font-weight: bold;
+	font-size: 2.2em;
 }
 
 .button-log {
 	width: 80%;
-    color: white;
-    transition: 0.5s;
-    background-color: #171617;
-    border: 5px solid #171617;
-    border-radius: 10px;
-    transition: 0.5s;
-    padding: 2%;
-    margin: 5% 0% 0% 0%;
+	color: white;
+	transition: 0.5s;
+	background-color: #171617;
+	border: 5px solid #171617;
+	border-radius: 10px;
+	transition: 0.5s;
+	padding: 2%;
+	margin: 5% 0% 0% 0%;
 }
 
 .button-log:hover {
