@@ -148,7 +148,7 @@ public class ProduitDAO {
 		boolean retour = false;
 		try {
 
-			requete = "INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`,`p_stock`) VALUES (?, ?, ?, ?, ?) WHERE `p_id`=?";
+			requete = "INSERT INTO `produit`(`p_nom`,`p_categorie`,`p_prix`,`p_image`,`p_stock`) VALUES (?, ?, ?, ?, ?)";
 			pst = this.conn.prepareStatement(requete);
 			pst.setString(1, nom);
 			pst.setString(2, categorie);
