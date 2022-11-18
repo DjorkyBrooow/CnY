@@ -51,7 +51,11 @@ List<Produit> liste = pd.tousLesProduits();
 			<label for='recherche'> Recherche :</label>
 			<input id ='recherche' name='recherche' type='text' autofocus placeholder ="Search.." />
 			<input type ='submit' value = 'recherche'/>
-		</form>
+	</form>
+		
+	<form action="rechercheproduit" >
+			<input id ='annule' name='annule' type='submit' value = 'annuler la recherche'/>
+	</form>
 		
 <%
 ProduitDAO r = new ProduitDAO(ConnexionBDD.getConn());
