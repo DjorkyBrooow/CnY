@@ -42,10 +42,10 @@
 
 	
 	<div class="container">
-		<form action="" method="post">
+		<form action="ajouterproduit" method="post">
 		<div>
 			<label for="image">Image</label>
-			<input class="form-group" type="text" placeholder="Nom du fichier image" name="image">
+			<input class="form-group" type="file" placeholder="Nom du fichier image" name="image">
 		</div>	
 		<div>
 			<label for="nom">Nom</label>
