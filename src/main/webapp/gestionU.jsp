@@ -46,18 +46,25 @@ List<Utilisateur> liste = uDAO.tousLesUtilisateurs();
 <body>
 	<%@include file="inclusions/navbar.jsp"%>
 	<div class="container container-panier">
-
-		<a href="gestion.jsp"><span class="titre-boutique">Gestion des articles</span></a>
-		<span class="titre-boutique">Gestion des utilisateurs</span>
+		
+		<div class="titre-onglet">
+			<div class="onglet onglet-article2">
+				<a href="gestion.jsp"><span class="titre-boutique">Gestion des articles</span></a>
+			</div>
+			<div class="onglet onglet-utilisateur2">
+				<span class="titre-boutique">Gestion des utilisateurs</span>
+			</div>
+		</div>
+		
 		<div class="container">
 			<div class="row">
-				<table>
+				<table class="table table-gestionU table-panier">
 					<thead>
 						<tr>
 							<th scope="col">Prenom</th>
 							<th scope="col">Email</th>
 							<th scope="col">Role</th>
-							<th scope="col">Changer rôle</th>
+							<th scope="col"></th>
 						</tr>
 					</thead>
 					
@@ -71,7 +78,11 @@ List<Utilisateur> liste = uDAO.tousLesUtilisateurs();
 							<td><%=u.getPrenom() %></td>
 							<td><%=u.getEmail() %></td>
 							<td><%=u.getRole() %></td>
-							<td><a href="changerrole?id=<%=u.getId() %>">Changer role</a></td>
+							<td>
+								<div class="button-historique button-role">
+									<a class="mx-3 btn" href="changerrole?id=<%=u.getId() %>">Changer role</a>
+								</div>
+							</td>
 						</tr>
 					<% 
 						}

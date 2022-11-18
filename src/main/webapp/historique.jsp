@@ -41,7 +41,7 @@ if (listePanier != null) {
 					<th scope="col">Numéro</th>
 					<th scope="col">Date</th>
 					<th scope="col">Prix</th>
-					<th scope="col">Détail</th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>

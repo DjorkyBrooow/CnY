@@ -50,9 +50,16 @@ List<Produit> liste = pd.tousLesProduits();
 <body>
 	<%@include file="inclusions/navbar.jsp"%>
 	<div class="container container-panier">
-
-		<span class="titre-boutique">Gestion des articles</span>
-		<a href="gestionU.jsp"><span class="titre-boutique">Gestion des utilisateurs</span></a>
+	
+		<div class="titre-onglet">
+			<div class="onglet onglet-article">
+				<span class="titre-boutique">Gestion des articles</span>
+			</div>
+			<div class="onglet onglet-utilisateur">
+				<a href="gestionU.jsp"><span class="titre-boutique">Gestion des utilisateurs</span></a>
+			</div>
+		</div>
+		
 		<div class="container">
 			<div class="">
 				<a href="ajoutProduit.jsp" class="btn btn-gestion button-add">Ajouter

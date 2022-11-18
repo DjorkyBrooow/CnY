@@ -58,11 +58,12 @@ if (session.getAttribute("recherche") != null) {
 				id='recherche' name='recherche' type='text' autofocus
 				placeholder="Rechercher.." /> <input type='submit'
 				value='&#128269;' id="search-logo" />
-		</form>
-		<form class="annule-form" action="rechercheproduit">
+				<form class="annule-form" action="rechercheproduit">
 			<input name='annule' type='submit' value='Annuler'
 				id='search-annule' />
 		</form>
+		</form>
+		
 
 		<div class="row">
 			<%

@@ -189,6 +189,14 @@ body {
     border: 1px solid #bb2d3b;
 }
 
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+  color: white;
+    pointer-events: none;
+    background-color: #625c62;
+    border-color: #625c62;
+    opacity: var(--bs-btn-disabled-opacity);
+}
+
 /* ---------- BOUTIQUE END ---------- */
 
 /* ---------- PANIER BEGIN ---------- */
@@ -270,7 +278,12 @@ body {
 
 /* ---------- HISTORIQUE BEGIN ---------- */
 
+.button-historique{
+	text-align: right;
+}
+
 .button-historique a{
+	
 	color: white;
     transition: 0.5s;
     background-color: #171617;
@@ -342,10 +355,51 @@ body {
 	border: 5px solid #171617;
 	background-color: #9b8a5e;
 }
-
-
+.titre-onglet{
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0% 0% 2% 0%;
+}
+.onglet{
+	width: 100%;
+	text-align: center;
+	margin: 0% 1%;
+}
+.onglet-article{
+	border-bottom:5px solid
+}
+.onglet-utilisateur{
+	border-bottom: 5px solid #9b8a5e;
+}
+.onglet-utilisateur a{
+	color: #9b8a5e;
+	text-decoration: none;
+}
 
 /* ---------- GESTION END ---------- */
+
+/* ---------- GESTIONU BEGIN ---------- */
+
+.onglet-article2{
+	border-bottom: 5px solid #9b8a5e;	
+}
+.onglet-article2 a{
+	color: #9b8a5e;
+	text-decoration: none;
+}
+
+.onglet-utilisateur2{
+	border-bottom:5px solid
+}
+.table-gestionU{
+	width: 100% !important;
+	margin: 2% 1% 2% 1%;
+    vertical-align: middle;
+}
+
+
+/* ---------- GESTIONU END ---------- */
 
 /* ---------- MONCOMPTE BEGIN ---------- */
 
