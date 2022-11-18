@@ -47,7 +47,7 @@ List<Utilisateur> liste = uDAO.tousLesUtilisateurs();
 	<%@include file="inclusions/navbar.jsp"%>
 	<div class="container container-panier">
 
-		<a href="gestion"><span class="titre-boutique">Gestion des articles</span></a>
+		<a href="gestion.jsp"><span class="titre-boutique">Gestion des articles</span></a>
 		<span class="titre-boutique">Gestion des utilisateurs</span>
 		<div class="container">
 			<div class="row">
