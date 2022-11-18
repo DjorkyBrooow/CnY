@@ -130,14 +130,4 @@
     <url-pattern>/changerrole</url-pattern>
   </servlet-mapping>
 </web-app>
-  <servlet>
-    <description></description>
-    <display-name>AjouterProduitServlet</display-name>
-    <servlet-name>AjouterProduitServlet</servlet-name>
-    <servlet-class>cny.servlet.AjouterProduitServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AjouterProduitServlet</servlet-name>
-    <url-pattern>/ajouterproduit</url-pattern>
-  </servlet-mapping>
-</web-app>
+ 
