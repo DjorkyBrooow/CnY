@@ -102,7 +102,7 @@ if (session.getAttribute("recherche") != null) {
 							<%=dcf.format(p.getPrix())%>€
 						</h6>
 						<a href="panier?id=<%=p.getId()%>"
-							class="button-boutique btn button-nostock <%if (p.getStock() == 0) {out.print("disabled");}%>">Ajouter au Panier</a>
+							class="button-boutique btn btn-primary <%if (p.getStock() == 0) {out.print("disabled");}%>">Ajouter au Panier</a>
 					</div>
 				</div>
 			</div>

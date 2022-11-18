@@ -1,7 +1,5 @@
 package cny.accesbdd;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -100,23 +98,22 @@ public class ProduitDAO {
 		return somme;
 	}
 
-	public boolean actualiserProduit(int idProduit, String image, String nom, double prix, String categorie,
-			int stock) {
+	public boolean actualiserProduit(Produit p) {
 		boolean retour = false;
 		try {
 			CommandeDAO cd = new CommandeDAO(ConnexionBDD.getConn());
-			Produit p = cd.recupererInfoProduit(idProduit);
-			int tempstock = p.getStock();
-			stock += tempstock;
+			Produit prod = cd.recupererInfoProduit(p.getId());
+			int tempstock = prod.getStock();
+			tempstock += p.getStock();
 
 			requete = "UPDATE `produit` SET  `p_image`=?, `p_nom`=?,`p_prix`=?,`p_categorie`=?, `p_stock`=? WHERE `p_id`=?";
 			pst = this.conn.prepareStatement(requete);
-			pst.setString(1, image);
-			pst.setString(2, nom);
-			pst.setDouble(3, prix);
-			pst.setString(4, categorie);
-			pst.setInt(5, stock);
-			pst.setInt(6, idProduit);
+			pst.setString(1, p.getImage());
+			pst.setString(2, p.getNom());
+			pst.setDouble(3, p.getPrix());
+			pst.setString(4, p.getCategorie());
+			pst.setInt(5, tempstock);
+			pst.setInt(6, p.getId());
 			pst.executeUpdate();
 			retour = true;
 
@@ -164,7 +161,6 @@ public class ProduitDAO {
 
 		return retour;
 	}
-	
 
 	public List<Produit> listeRecherche(String recherche) {
 		List<Produit> listeR = new ArrayList<>();

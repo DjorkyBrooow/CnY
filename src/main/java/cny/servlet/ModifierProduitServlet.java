@@ -28,7 +28,9 @@ public class ModifierProduitServlet extends HttpServlet {
 
 			try {
 				stock = Integer.parseInt(request.getParameter("stock"));
-			} catch (NumberFormatException e) {}
+			} catch (NumberFormatException e) {
+				stock = 0;
+			}
 			int idProduit = Integer.parseInt(request.getParameter("id"));
 			try {
 				CommandeDAO cd = new CommandeDAO(ConnexionBDD.getConn());
@@ -49,14 +51,14 @@ public class ModifierProduitServlet extends HttpServlet {
 				if (stock <= 0) {
 					stock = 0;
 				}
-
+				
 				p.setImage(image);
 				p.setNom(nom);
 				p.setPrix(prix);
 				p.setCategorie(categorie);
 				p.setStock(stock);
 				
-				boolean resultat = pd.actualiserProduit(idProduit,image,nom,prix,categorie,stock);
+				boolean resultat = pd.actualiserProduit(p);
 				
 				if (resultat) {
 					System.out.print("modification réussie");
