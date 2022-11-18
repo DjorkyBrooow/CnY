@@ -161,6 +161,28 @@ public class ProduitDAO {
 
 		return retour;
 	}
+	
+	
+	public String recupererImage(int idProduit) {
+		String image = null;
+		
+		requete = "SELECT `p_image` FROM `produit` WHERE `p_id`=?";
+		try {
+			pst = this.conn.prepareStatement(requete);
+			pst.setInt(1,idProduit);
+			resultat = pst.executeQuery();
+			
+			if (resultat.next()) {
+				image = resultat.getString("p_image");
+				
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return image;
+	}
 
 	public List<Produit> listeRecherche(String recherche) {
 		List<Produit> listeR = new ArrayList<>();
