@@ -66,7 +66,6 @@ img {
 		<div class="titre-tableau-modif">
 			<h3>Informations</h3>
 		</div>
-
 		<table class="table table-panier">
 			<thead>
 				<tr>
@@ -87,18 +86,16 @@ img {
 				</tr>
 			</tbody>
 		</table>
+
 		<div class="center-button-suppr">
-			<a class="btn button-suppr"
-				href="supprimerproduit?id=<%=idProduit%>">Confirmer la
-				suppression</a>
+			<a class="btn button-suppr" href="supprimerproduit?id=<%=idProduit%>">Confirmer
+				la suppression</a>
 
 		</div>
-
-
-
 		<%
 		}
 		%>
+
 	</div>
 
 

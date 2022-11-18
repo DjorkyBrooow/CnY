@@ -86,59 +86,58 @@ img {
 				</tr>
 			</tbody>
 		</table>
-
-
-		<div>
-			<form class="form-modif" action="modifierproduit?id=<%=idProduit%>"
-				method="post">
-				<div class="flex-modif">
-					<div>
-						<label for="image">Image</label> <input class="form-group"
-							type="text" placeholder="Nom du fichier image" name="image">
-					</div>
-					<div>
-						<label for="nom">Nom</label> <input class="form-group" type="text"
-							placeholder="Nom de l'article" name="nom">
-					</div>
-					<div>
-						<label for="prix">Prix</label> <input class="form-group"
-							type="text" placeholder="Prix de l'article" name="prix">
-					</div>
-
-				</div>
-				<div class="flex-modif">
-					<div>
-						<label for="categorie">Catégories</label> <input
-							class="form-group" type="text"
-							placeholder="Catégories de l'article" name="categorie">
-					</div>
-					<div>
-						<label for="stock">Stock</label> <input class="form-group"
-							type="number" placeholder="Stock à ajouter" name="stock" min="0">
-					</div>
-					<div>
-						<label></label>
-						<button class="btn button-add button-modif" type="submit">Valider</button>
-					</div>
-
-
-
-				</div>
-
-
-			</form>
-		</div>
-
-
-		<%
-		} else {
-		%>
-		<h3>Aucun produit ne correspond à votre recherche</h3>
-		<%
-		}
-		%>
-
 	</div>
+
+
+
+	<div>
+		<form class="form-modif" action="modifierproduit?id=<%=idProduit%>"
+			method="post">
+			<div class="flex-modif">
+				<div>
+					<label for="image">Image</label> <input class="form-group"
+						type="text" placeholder="Nom du fichier image" name="image">
+				</div>
+				<div>
+					<label for="nom">Nom</label> <input class="form-group" type="text"
+						placeholder="Nom de l'article" name="nom">
+				</div>
+				<div>
+					<label for="prix">Prix</label> <input class="form-group"
+						type="text" placeholder="Prix de l'article" name="prix">
+				</div>
+
+			</div>
+			<div class="flex-modif">
+				<div>
+					<label for="categorie">Catégories</label> <input class="form-group"
+						type="text" placeholder="Catégories de l'article" name="categorie">
+				</div>
+				<div>
+					<label for="stock">Stock</label> <input class="form-group"
+						type="number" placeholder="Stock à ajouter" name="stock" min="0">
+				</div>
+				<div>
+					<label></label>
+					<button class="btn button-add button-modif" type="submit">Valider</button>
+				</div>
+
+
+
+			</div>
+
+
+		</form>
+	</div>
+
+
+	<%
+	} else {
+	%>
+	<h3>Aucun produit ne correspond à votre recherche</h3>
+	<%
+	}
+	%>
 
 	<%@include file="inclusions/pied.jsp"%>
 </body>

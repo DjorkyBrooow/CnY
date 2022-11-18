@@ -119,4 +119,14 @@
     <servlet-name>RechercheProduitServlet</servlet-name>
     <url-pattern>/rechercheproduit</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>changerRoleServlet</display-name>
+    <servlet-name>changerRoleServlet</servlet-name>
+    <servlet-class>cny.servlet.changerRoleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>changerRoleServlet</servlet-name>
+    <url-pattern>/changerrole</url-pattern>
+  </servlet-mapping>
 </web-app>

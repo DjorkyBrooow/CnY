@@ -66,7 +66,6 @@ if (listePanier != null) {
 				%>
 			</tbody>
 		</table>
-
 		<div class="container-end-panier">
 
 			<div class="button-panier">
@@ -74,9 +73,7 @@ if (listePanier != null) {
 					informations personnelles</a>
 			</div>
 		</div>
-
 	</div>
-
 
 
 	<%@include file="inclusions/pied.jsp"%>
