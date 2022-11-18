@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -26,8 +28,22 @@ public class SupprimerProduitServlet extends HttpServlet {
 			try {
 				ProduitDAO pd = new ProduitDAO(ConnexionBDD.getConn());
 				
-				boolean resultat = pd.supprimerProduit(idProduit);
+				String image = pd.recupererImage(idProduit);
+				if(image != null) {
+					try{
+
+						 File fileImage = new File("C:/Users/CYTech Student/eclipse-workspace/CnY/src/main/webapp/img/img_produits/"+image);
+						 if(fileImage.delete()){
+						 System.out.println(fileImage.getName() + " est supprimé.");
+						 }else{
+						 System.out.println("la suppression de l'image a échoué");
+						 }
+					}catch(Exception e){
+						 e.printStackTrace();
+						 }
+				}
 				
+				boolean resultat = pd.supprimerProduit(idProduit);
 				if (resultat) {
 					System.out.print("suppression réussie");
 				} else {
